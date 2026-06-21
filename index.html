@@ -564,8 +564,32 @@ function handleUserBtn() {
   else showScreen('auth');
 }
 async function signInWithGoogle() {
-  await sb.auth.signInWithOAuth({ provider:'google', options:{ redirectTo: REDIRECT_URL } });
+  await sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: REDIRECT_URL,
+      queryParams: { redirect_to: REDIRECT_URL }
+    }
+  });
 }
+function skipAuth() { showScreen('home'); }
+
+// Catch auth redirect
+(async () => {
+  if (!sb) return;
+  const hash = window.location.hash;
+  const search = window.location.search;
+  if (hash.includes('access_token') || search.includes('code=')) {
+    const { data } = await sb.auth.getSession();
+    if (data?.session) {
+      currentUser = data.session.user;
+      updateUserBtn();
+      await loadSavedBuilds();
+      showScreen('home');
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }
+})();
 function skipAuth() { showScreen('home'); }
 
 // ── NAV ───────────────────────────────────────────────────────
