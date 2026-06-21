@@ -21,54 +21,65 @@ textarea,input{font-family:inherit}
 .screen{display:none;flex-direction:column;flex:1}
 .screen.active{display:flex}
 
-/* ── AUTH ── */
+/* AUTH */
 #auth-screen{align-items:center;justify-content:center;padding:40px 24px;text-align:center;gap:20px}
 .auth-logo{font-size:52px}
 .auth-title{font-size:34px;font-weight:900;letter-spacing:-1px}
 .auth-title span{color:var(--orange)}
 .auth-sub{font-size:14px;color:var(--muted);line-height:1.7;max-width:280px}
 .google-btn{display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;color:#1a1a1a;border:none;border-radius:12px;padding:14px 24px;font-size:15px;font-weight:700;width:100%;max-width:300px}
-.google-btn svg{width:20px;height:20px;flex-shrink:0}
 .auth-skip{background:none;border:none;color:var(--muted);font-size:13px;text-decoration:underline}
 
-/* ── HOME ── */
-.top-bar{background:var(--panel);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+/* TOP BAR */
+.top-bar{background:var(--panel);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
 .app-name{font-size:16px;font-weight:800;color:var(--orange);letter-spacing:-0.5px}
 .top-right{display:flex;align-items:center;gap:8px}
 .user-btn{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--muted)}
-
-/* LANGUAGE PICKER */
 .lang-btn{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:12px;color:var(--text);display:flex;align-items:center;gap:5px;position:relative}
-.lang-dropdown{position:absolute;top:36px;right:0;background:var(--panel);border:1px solid var(--border);border-radius:10px;z-index:100;min-width:180px;overflow:hidden;display:none;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.lang-dropdown{position:absolute;top:36px;right:0;background:var(--panel);border:1px solid var(--border);border-radius:10px;z-index:200;min-width:180px;overflow:hidden;display:none;box-shadow:0 8px 32px rgba(0,0,0,0.5);max-height:320px;overflow-y:auto}
 .lang-dropdown.open{display:block}
 .lang-option{padding:10px 14px;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:10px;border:none;background:none;width:100%;color:var(--text);text-align:left}
 .lang-option:hover{background:var(--card)}
 .lang-option.active{color:var(--orange)}
-.lang-flag{font-size:16px;flex-shrink:0}
-.lang-name{flex:1}
-.lang-check{color:var(--orange);font-size:12px}
 
-.hero{padding:32px 22px 22px;background:linear-gradient(160deg,var(--panel),var(--bg));border-bottom:1px solid var(--border)}
+/* HERO */
+.hero{padding:28px 22px 20px;background:linear-gradient(160deg,var(--panel),var(--bg));border-bottom:1px solid var(--border)}
 .eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--orange);margin-bottom:10px}
-.hero h1{font-size:30px;font-weight:900;line-height:1.1;margin-bottom:10px;letter-spacing:-1px}
+.hero h1{font-size:28px;font-weight:900;line-height:1.1;margin-bottom:10px;letter-spacing:-1px}
 .hero h1 span{color:var(--orange)}
-.hero p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:20px}
+.hero p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:18px}
+
+/* INPUT BOX */
 .input-box{background:var(--card);border-radius:14px;border:1.5px solid var(--border);overflow:hidden}
 .input-box textarea{width:100%;background:transparent;border:none;outline:none;color:var(--text);font-size:15px;padding:14px 16px 10px;resize:none}
-.input-foot{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-top:1px solid var(--border)}
-.char-c{font-size:11px;color:var(--muted)}
-.next-btn{background:var(--orange);color:#fff;border:none;border-radius:10px;padding:9px 18px;font-size:14px;font-weight:700}
-.section{padding:20px 20px 0}
+.input-foot{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-top:1px solid var(--border);gap:8px}
+.char-c{font-size:11px;color:var(--muted);flex-shrink:0}
+.input-actions{display:flex;gap:8px;align-items:center}
+
+/* UPLOAD AREA */
+.upload-strip{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--border);align-items:center;flex-wrap:wrap}
+.upload-btn{background:var(--panel);border:1.5px dashed var(--border);border-radius:10px;padding:8px 14px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;cursor:pointer;transition:all 0.15s}
+.upload-btn:hover{border-color:var(--orange);color:var(--orange)}
+.upload-btn input{display:none}
+.preview-wrap{position:relative;display:inline-block}
+.img-preview{width:52px;height:52px;object-fit:cover;border-radius:8px;border:1.5px solid var(--orange)}
+.img-remove{position:absolute;top:-6px;right:-6px;width:18px;height:18px;background:var(--red);border:none;border-radius:50%;color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.file-preview{background:var(--panel);border:1px solid var(--orange);border-radius:8px;padding:6px 10px;font-size:11px;color:var(--orange);display:flex;align-items:center;gap:6px}
+.file-remove{background:none;border:none;color:var(--red);cursor:pointer;font-size:13px;padding:0}
+
+.next-btn{background:var(--orange);color:#fff;border:none;border-radius:10px;padding:9px 18px;font-size:14px;font-weight:700;white-space:nowrap}
+.section{padding:18px 20px 0}
 .sec-lbl{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
 .ex-chip{width:100%;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--text);text-align:left;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .arr{color:var(--orange)}
-.saved-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;width:100%;text-align:left;border:none}
+.saved-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;width:100%;text-align:left;border-style:solid}
 .saved-title{font-size:14px;font-weight:700;margin-bottom:3px;color:var(--text)}
 .saved-meta{font-size:12px;color:var(--muted)}
 .saved-pct{font-size:13px;font-weight:800;color:var(--orange)}
 
-/* ── LEVEL ── */
-#level-screen{padding:28px 20px;flex:1;overflow-y:auto}
+/* LEVEL */
+#level-screen{overflow-y:auto}
+.level-wrap{padding:28px 20px;flex:1}
 .back-btn{background:none;border:none;color:var(--muted);font-size:13px;margin-bottom:22px;padding:0;display:block}
 .lvl-title{font-size:22px;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px}
 .lvl-sub{font-size:13px;color:var(--muted);margin-bottom:22px}
@@ -79,12 +90,11 @@ textarea,input{font-family:inherit}
 .lvl-desc{font-size:12px;color:var(--muted)}
 .build-btn{margin-top:24px;background:var(--orange);color:#fff;border:none;border-radius:14px;padding:15px;font-size:15px;font-weight:800;width:100%}
 
-/* ── LOADING ── */
-#loading-screen{align-items:center;justify-content:center;flex:1}
-.load-header{width:100%;background:var(--panel);border-bottom:1px solid var(--border);padding:14px 16px;flex-shrink:0}
+/* LOADING */
+#loading-screen{flex:1}
+.load-header{background:var(--panel);border-bottom:1px solid var(--border);padding:14px 16px;flex-shrink:0}
 .load-back{background:none;border:none;color:var(--muted);font-size:12px;padding:0;margin-bottom:6px;display:block}
-.load-sub-txt{font-size:12px;color:var(--muted)}
-.load-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;gap:24px;width:100%}
+.load-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;gap:24px}
 .assembly-area{position:relative;width:300px;height:220px}
 .prog-wrap{width:100%;max-width:260px}
 .prog-track{background:var(--border);border-radius:3px;height:4px;margin-bottom:10px}
@@ -92,9 +102,8 @@ textarea,input{font-family:inherit}
 .load-msg{font-size:14px;color:var(--muted);text-align:center;min-height:20px}
 .load-project{font-size:12px;color:var(--orange);font-weight:700;letter-spacing:1px;opacity:0.7;text-align:center;margin-top:4px}
 
-/* ── BUILD ── */
-#build-screen{height:100vh;overflow:hidden;display:none;flex-direction:column}
-#build-screen.active{display:flex}
+/* BUILD */
+#build-screen{height:100vh;overflow:hidden}
 .b-header{background:var(--panel);border-bottom:1px solid var(--border);padding:14px 16px;flex-shrink:0}
 .b-back{background:none;border:none;color:var(--muted);font-size:12px;margin-bottom:8px;padding:0;display:flex;align-items:center;gap:4px}
 .b-title{font-size:18px;font-weight:800;margin-bottom:6px;letter-spacing:-0.5px}
@@ -112,27 +121,23 @@ textarea,input{font-family:inherit}
 .tab-content{flex:1;overflow-y:auto;padding:14px 14px 80px;display:none}
 .tab-content.active{display:block}
 
-/* ── STEP CARDS ── */
+/* STEP CARDS */
 .step-card{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:var(--card)}
 .step-card.done{background:rgba(34,197,94,0.05);border-color:rgba(34,197,94,0.27)}
 .step-hdr{border-bottom:1px solid;padding:10px 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;border:2px solid}
-.step-title-txt{flex:1;font-size:13px;font-weight:700;min-width:0}
+.step-title-txt{flex:1;font-size:13px;font-weight:700}
 .step-dur{font-size:10px;color:var(--muted);background:var(--panel);padding:2px 7px;border-radius:10px;white-space:nowrap}
 .diff-badge{font-size:10px;font-weight:800;letter-spacing:0.8px;padding:2px 8px;border-radius:10px;white-space:nowrap}
-.gfx-box{height:110px;background:var(--panel);display:flex;align-items:center;justify-content:center;padding:8px 16px;position:relative}
+.gfx-box{height:100px;background:var(--panel);display:flex;align-items:center;justify-content:center;padding:8px 16px}
 .step-body{padding:12px 14px}
-.step-what{font-size:14px;font-weight:700;margin-bottom:6px;line-height:1.4;color:var(--text)}
+.step-what{font-size:14px;font-weight:700;margin-bottom:6px;line-height:1.4}
 .step-how{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px}
-
-/* PRECISION BOX */
 .precision-box{background:rgba(61,158,255,0.07);border:1px solid rgba(61,158,255,0.25);border-radius:8px;padding:10px 12px;margin-bottom:10px}
 .precision-title{font-size:10px;font-weight:800;letter-spacing:1.5px;color:var(--blue);margin-bottom:6px}
 .precision-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px;font-size:12px}
 .precision-label{color:var(--blue);font-weight:700;min-width:80px;flex-shrink:0}
 .precision-val{color:var(--text);line-height:1.5}
-
-/* RARE PARTS BOX */
 .rare-box{background:rgba(168,85,247,0.07);border:1px solid rgba(168,85,247,0.25);border-radius:8px;padding:10px 12px;margin-bottom:10px}
 .rare-title{font-size:10px;font-weight:800;letter-spacing:1.5px;color:var(--purple);margin-bottom:6px}
 .rare-part{display:flex;flex-direction:column;gap:3px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(168,85,247,0.15)}
@@ -140,14 +145,14 @@ textarea,input{font-family:inherit}
 .rare-name{font-size:12px;font-weight:700;color:var(--purple)}
 .rare-where{font-size:12px;color:var(--muted)}
 .rare-print{font-size:11px;color:var(--green);font-weight:600}
-
 .warn-box{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--red);margin-bottom:10px;line-height:1.5}
-.check-fail{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--yellow);margin-bottom:10px;line-height:1.5}
-.check-btn{width:100%;padding:10px;border-radius:10px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:13px;font-weight:700;transition:all 0.15s}
+.check-before{background:rgba(61,158,255,0.07);border:1px solid rgba(61,158,255,0.2);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--blue);margin-bottom:8px;line-height:1.5}
+.check-after{background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--green);margin-bottom:10px;line-height:1.5}
+.check-btn{width:100%;padding:10px;border-radius:10px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:13px;font-weight:700}
 .check-btn.done{border-color:var(--green);background:rgba(34,197,94,0.13);color:var(--green)}
 .complete-card{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.3);border-radius:12px;padding:24px;text-align:center;margin-bottom:10px}
 
-/* PARTS / SAFETY */
+/* PARTS */
 .list-card{background:var(--card);border:1px solid var(--border);border-radius:11px;margin-bottom:8px;padding:12px 14px}
 .list-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px}
 .list-name{font-size:14px;font-weight:600}
@@ -155,26 +160,33 @@ textarea,input{font-family:inherit}
 .list-cost{font-size:12px;color:var(--green);font-weight:600;margin-bottom:3px}
 .list-tip{font-size:12px;color:var(--muted);line-height:1.4;margin-bottom:3px}
 .list-source{font-size:12px;color:var(--blue);font-weight:600}
-.rare-flag{font-size:10px;font-weight:800;color:var(--purple);background:rgba(168,85,247,0.13);padding:2px 8px;border-radius:10px;letter-spacing:0.8px}
-.print-flag{font-size:10px;font-weight:800;color:var(--green);background:rgba(34,197,94,0.13);padding:2px 8px;border-radius:10px;letter-spacing:0.8px}
-.req-badge{font-size:10px;font-weight:800;letter-spacing:0.8px;color:var(--blue);background:rgba(61,158,255,0.13);padding:2px 8px;border-radius:10px}
+.rare-flag{font-size:10px;font-weight:800;color:var(--purple);background:rgba(168,85,247,0.13);padding:2px 8px;border-radius:10px}
+.print-flag{font-size:10px;font-weight:800;color:var(--green);background:rgba(34,197,94,0.13);padding:2px 8px;border-radius:10px}
+.req-badge{font-size:10px;font-weight:800;color:var(--blue);background:rgba(61,158,255,0.13);padding:2px 8px;border-radius:10px}
 .sf-card{background:var(--card);border:1px solid rgba(245,158,11,0.3);border-radius:11px;padding:12px 14px;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start}
 .sf-icon{font-size:22px;flex-shrink:0}
-.sf-text{font-size:13px;line-height:1.5}
 .ov-card{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:14px;margin-bottom:10px}
 .ov-text{font-size:13px;color:var(--muted);line-height:1.7}
 .pt-card{background:rgba(255,107,43,0.08);border:1px solid rgba(255,107,43,0.25);border-radius:11px;padding:12px 14px;margin-bottom:8px;font-size:13px;line-height:1.5}
 
 /* CHAT */
 #chat-tab{padding:0!important}
-.chat-wrap{display:flex;flex-direction:column;height:100%}
-.chat-messages{flex:1;overflow-y:auto;padding:14px 14px 0;display:flex;flex-direction:column;gap:10px}
-.bubble{max-width:85%;padding:9px 13px;font-size:13px;line-height:1.6;border:1px solid}
+.chat-wrap{display:flex;flex-direction:column;height:100%;min-height:0}
+.chat-messages{flex:1;overflow-y:auto;padding:14px 14px 0;display:flex;flex-direction:column;gap:10px;min-height:0}
+.bubble{max-width:85%;padding:9px 13px;font-size:13px;line-height:1.6;border:1px solid;word-break:break-word}
 .bubble.ai{align-self:flex-start;background:var(--card);border-color:var(--border);border-radius:14px 14px 14px 4px}
 .bubble.user{align-self:flex-end;background:var(--orange);border-color:var(--orange);border-radius:14px 14px 4px 14px}
-.chat-foot{padding:10px 14px;background:var(--panel);border-top:1px solid var(--border);display:flex;gap:8px;align-items:flex-end;flex-shrink:0}
+.bubble img{max-width:100%;border-radius:8px;margin-top:6px;display:block}
+.chat-foot{padding:10px 14px;background:var(--panel);border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;flex-shrink:0}
+.chat-input-row{display:flex;gap:8px;align-items:flex-end}
 .chat-input{flex:1;background:var(--card);border:1px solid var(--border);border-radius:11px;padding:9px 12px;color:var(--text);font-size:13px;outline:none;resize:none;min-height:40px}
 .send-btn{background:var(--orange);border:none;border-radius:9px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chat-upload-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.chat-upload-btn{background:var(--card);border:1px dashed var(--border);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px;cursor:pointer}
+.chat-upload-btn:hover{border-color:var(--orange);color:var(--orange)}
+.chat-upload-btn input{display:none}
+.chat-img-preview{width:40px;height:40px;object-fit:cover;border-radius:6px;border:1.5px solid var(--orange)}
+.chat-img-remove{background:var(--red);border:none;border-radius:50%;width:16px;height:16px;color:#fff;font-size:10px;cursor:pointer;margin-left:-8px;margin-top:-8px;flex-shrink:0}
 
 @keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--orange);display:inline-block;margin:0 2px}
@@ -186,176 +198,199 @@ textarea,input{font-family:inherit}
 <body>
 <div id="app">
 
-  <!-- AUTH -->
-  <div id="auth-screen" class="screen active">
-    <div class="auth-logo">⚡</div>
-    <div class="auth-title">i<span>Guide</span></div>
-    <p class="auth-sub">AI-powered maker guide. Build anything with precise step-by-step instructions in your language.</p>
-    <button class="google-btn" onclick="signInWithGoogle()">
-      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-      Continue with Google
+<!-- AUTH -->
+<div id="auth-screen" class="screen active">
+  <div class="auth-logo">⚡</div>
+  <div class="auth-title">i<span>Guide</span></div>
+  <p class="auth-sub">AI-powered maker guide. Build anything with precise step-by-step instructions in your language.</p>
+  <button class="google-btn" onclick="signInWithGoogle()">
+    <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+    Continue with Google
+  </button>
+  <button class="auth-skip" onclick="skipAuth()">Continue without account</button>
+</div>
+
+<!-- HOME -->
+<div id="home-screen" class="screen">
+  <div class="top-bar">
+    <div class="app-name">⚡ iGuide</div>
+    <div class="top-right">
+      <div style="position:relative">
+        <button class="lang-btn" onclick="toggleLangMenu()" id="lang-btn">
+          <span id="lang-flag">🇺🇸</span>
+          <span id="lang-code">EN</span>
+          <span style="font-size:9px;color:var(--muted)">▾</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button class="lang-option active" onclick="setLang('en','EN','🇺🇸','English')">🇺🇸 English <span id="lc-en" style="margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('es','ES','🇲🇽','Spanish')">🇲🇽 Español <span id="lc-es" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('pt','PT','🇧🇷','Portuguese')">🇧🇷 Português <span id="lc-pt" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('tl','TL','🇵🇭','Filipino')">🇵🇭 Filipino <span id="lc-tl" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('vi','VI','🇻🇳','Vietnamese')">🇻🇳 Tiếng Việt <span id="lc-vi" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('zh','ZH','🇨🇳','Chinese')">🇨🇳 中文 <span id="lc-zh" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('fr','FR','🇫🇷','French')">🇫🇷 Français <span id="lc-fr" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('de','DE','🇩🇪','German')">🇩🇪 Deutsch <span id="lc-de" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('hi','HI','🇮🇳','Hindi')">🇮🇳 हिंदी <span id="lc-hi" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+          <button class="lang-option" onclick="setLang('pa','PA','🇮🇳','Punjabi')">🇮🇳 ਪੰਜਾਬੀ <span id="lc-pa" style="display:none;margin-left:auto;color:var(--orange)">✓</span></button>
+        </div>
+      </div>
+      <button class="user-btn" id="user-btn" onclick="handleUserBtn()">Sign In</button>
+    </div>
+  </div>
+
+  <div style="flex:1;overflow-y:auto;padding-bottom:20px">
+    <div class="hero">
+      <div class="eyebrow" id="hero-eyebrow">AI MAKER GUIDE</div>
+      <h1 id="hero-title">Build<br/><span>anything.</span></h1>
+      <p id="hero-sub">Describe what you want to make — or snap a photo. Get precise tools, rare parts sourcing, safety guide, and step-by-step instructions in your language.</p>
+      <div class="input-box">
+        <textarea id="main-prompt" rows="3" maxlength="280" oninput="updateChar()" placeholder="What do you want to build?"></textarea>
+        <!-- IMAGE/FILE UPLOAD STRIP -->
+        <div class="upload-strip" id="upload-strip">
+          <label class="upload-btn">
+            📷 Photo
+            <input type="file" id="img-upload" accept="image/*" onchange="handleImageUpload(this)"/>
+          </label>
+          <label class="upload-btn">
+            📎 File
+            <input type="file" id="file-upload" accept=".pdf,.txt,.doc,.docx" onchange="handleFileUpload(this)"/>
+          </label>
+          <div id="upload-previews"></div>
+        </div>
+        <div class="input-foot">
+          <span class="char-c" id="char-count">0/280</span>
+          <button class="next-btn" onclick="goToLevel()" id="next-btn">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="saved-section" style="display:none">
+      <div class="sec-lbl">MY BUILDS</div>
+      <div id="saved-list"></div>
+    </div>
+
+    <div class="section">
+      <div class="sec-lbl" id="examples-lbl">IDEAS TO START WITH</div>
+      <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A computer cockpit gaming chair setup</span></button>
+      <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A standing desk from plywood and steel pipes</span></button>
+      <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A vertical herb garden from PVC pipes</span></button>
+      <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A Raspberry Pi home security camera</span></button>
+      <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A wooden storage bench with hidden compartment</span></button>
+      <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>An LED ring light for video calls</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- LEVEL -->
+<div id="level-screen" class="screen">
+  <div class="level-wrap">
+    <button class="back-btn" onclick="showScreen('home')">← Back</button>
+    <div class="lvl-title" id="lvl-title">Your skill level?</div>
+    <div class="lvl-sub" id="lvl-sub">This shapes how detailed the instructions get.</div>
+    <button class="lvl-card" onclick="selectLevel('beginner',this)">
+      <div class="lvl-icon">🌱</div>
+      <div style="flex:1"><div class="lvl-name" id="ln-b">Beginner</div><div class="lvl-desc" id="ld-b">First project, basic tools only</div></div>
     </button>
-    <button class="auth-skip" onclick="skipAuth()">Continue without account</button>
+    <button class="lvl-card" onclick="selectLevel('intermediate',this)">
+      <div class="lvl-icon">⚙️</div>
+      <div style="flex:1"><div class="lvl-name" id="ln-i">Intermediate</div><div class="lvl-desc" id="ld-i">Some experience, power tools ok</div></div>
+    </button>
+    <button class="lvl-card" onclick="selectLevel('advanced',this)">
+      <div class="lvl-icon">🔥</div>
+      <div style="flex:1"><div class="lvl-name" id="ln-a">Advanced</div><div class="lvl-desc" id="ld-a">Comfortable with complex builds</div></div>
+    </button>
+    <button class="build-btn" id="build-btn" onclick="startBuild()" style="display:none">⚡ Generate My Build Plan</button>
   </div>
+</div>
 
-  <!-- HOME -->
-  <div id="home-screen" class="screen">
-    <div class="top-bar">
-      <div class="app-name">⚡ iGuide</div>
-      <div class="top-right">
-        <!-- LANGUAGE PICKER -->
-        <div style="position:relative">
-          <button class="lang-btn" onclick="toggleLangMenu()" id="lang-btn">
-            <span id="lang-flag">🇺🇸</span>
-            <span id="lang-code">EN</span>
-            <span style="font-size:9px;color:var(--muted)">▾</span>
-          </button>
-          <div class="lang-dropdown" id="lang-dropdown">
-            <button class="lang-option active" onclick="setLang('en','EN','🇺🇸','English')"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-check" id="lc-en">✓</span></button>
-            <button class="lang-option" onclick="setLang('es','ES','🇲🇽','Spanish')"><span class="lang-flag">🇲🇽</span><span class="lang-name">Español</span><span class="lang-check" id="lc-es" style="display:none">✓</span></button>
-            <button class="lang-option" onclick="setLang('pt','PT','🇧🇷','Portuguese')"><span class="lang-flag">🇧🇷</span><span class="lang-name">Português</span><span class="lang-check" id="lc-pt" style="display:none">✓</span></button>
-            <button class="lang-option" onclick="setLang('tl','TL','🇵🇭','Filipino')"><span class="lang-flag">🇵🇭</span><span class="lang-name">Filipino</span><span class="lang-check" id="lc-tl" style="display:none">✓</span></button>
-            <button class="lang-option" onclick="setLang('vi','VI','🇻🇳','Vietnamese')"><span class="lang-flag">🇻🇳</span><span class="lang-name">Tiếng Việt</span><span class="lang-check" id="lc-vi" style="display:none">✓</span></button>
-            <button class="lang-option" onclick="setLang('zh','ZH','🇨🇳','Chinese')"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-check" id="lc-zh" style="display:none">✓</span></button>
-            <button class="lang-option" onclick="setLang('fr','FR','🇫🇷','French')"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-check" id="lc-fr" style="display:none">✓</span></button>
-            <button class="lang-option" onclick="setLang('de','DE','🇩🇪','German')"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-check" id="lc-de" style="display:none">✓</span></button>
-            <button class="lang-option" onclick="setLang('hi','HI','🇮🇳','Hindi')"><span class="lang-flag">🇮🇳</span><span class="lang-name">हिंदी</span><span class="lang-check" id="lc-hi" style="display:none">✓</span></button>
-            <button class="lang-option" onclick="setLang('pa','PA','🇮🇳','Punjabi')"><span class="lang-flag">🇮🇳</span><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-check" id="lc-pa" style="display:none">✓</span></button>
-          </div>
+<!-- LOADING -->
+<div id="loading-screen" class="screen">
+  <div class="load-header">
+    <button class="load-back" onclick="showScreen('home');stopLoading()">← Back</button>
+    <div style="font-size:12px;color:var(--muted)" id="load-sub-txt">Generating your build plan...</div>
+  </div>
+  <div class="load-body">
+    <div class="assembly-area">
+      <svg width="300" height="220" style="overflow:visible">
+        <defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <line x1="0" y1="44" x2="300" y2="44" stroke="#252836" stroke-width="0.5"/>
+        <line x1="0" y1="88" x2="300" y2="88" stroke="#252836" stroke-width="0.5"/>
+        <line x1="0" y1="132" x2="300" y2="132" stroke="#252836" stroke-width="0.5"/>
+        <line x1="0" y1="176" x2="300" y2="176" stroke="#252836" stroke-width="0.5"/>
+        <line x1="60" y1="0" x2="60" y2="220" stroke="#252836" stroke-width="0.5"/>
+        <line x1="120" y1="0" x2="120" y2="220" stroke="#252836" stroke-width="0.5"/>
+        <line x1="180" y1="0" x2="180" y2="220" stroke="#252836" stroke-width="0.5"/>
+        <line x1="240" y1="0" x2="240" y2="220" stroke="#252836" stroke-width="0.5"/>
+        <rect id="p-base"   x="90"  y="155" width="120" height="16" rx="3"  fill="#ff6b2b" opacity="0"/>
+        <rect id="p-leftl"  x="90"  y="60"  width="12"  height="95" rx="2"  fill="#3d9eff" opacity="0"/>
+        <rect id="p-rightl" x="198" y="60"  width="12"  height="95" rx="2"  fill="#3d9eff" opacity="0"/>
+        <rect id="p-arch"   x="90"  y="48"  width="120" height="22" rx="11" fill="#ff6b2b" opacity="0"/>
+        <rect id="p-seat"   x="108" y="105" width="84"  height="50" rx="4"  fill="#1a1d27" opacity="0"/>
+        <rect id="p-mon"    x="115" y="62"  width="70"  height="40" rx="3"  fill="#13151c" opacity="0"/>
+        <rect id="p-monb"   x="115" y="62"  width="70"  height="40" rx="3"  fill="none" stroke="#3d9eff" stroke-width="1.5" opacity="0"/>
+        <rect id="p-kbd"    x="100" y="128" width="50"  height="10" rx="2"  fill="#1a1d27" opacity="0"/>
+        <rect id="p-glow"   x="90"  y="168" width="120" height="4"  rx="2"  fill="#ff6b2b" opacity="0"/>
+        <circle id="j1" cx="90"  cy="60"  r="4" fill="#ff6b2b" opacity="0" filter="url(#glow)"/>
+        <circle id="j2" cx="210" cy="60"  r="4" fill="#ff6b2b" opacity="0" filter="url(#glow)"/>
+        <circle id="j3" cx="90"  cy="155" r="4" fill="#ff6b2b" opacity="0" filter="url(#glow)"/>
+        <circle id="j4" cx="210" cy="155" r="4" fill="#ff6b2b" opacity="0" filter="url(#glow)"/>
+        <g id="complete-mark" opacity="0">
+          <circle cx="150" cy="100" r="24" fill="#22c55e" opacity="0.12" filter="url(#glow)"/>
+          <polyline points="138,100 146,109 163,90" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+    </div>
+    <div class="prog-wrap">
+      <div class="prog-track"><div class="prog-fill" id="load-prog" style="width:0%"></div></div>
+      <div class="load-msg" id="load-msg">Scanning your project...</div>
+    </div>
+    <div class="load-project" id="load-project"></div>
+  </div>
+</div>
+
+<!-- BUILD -->
+<div id="build-screen" class="screen">
+  <div class="b-header">
+    <button class="b-back" onclick="showScreen('home')">← New Build</button>
+    <div class="b-title" id="b-title"></div>
+    <div class="b-meta">
+      <span class="badge" id="b-time" style="color:var(--orange);background:rgba(255,107,43,0.13)"></span>
+      <span class="badge" id="b-cost" style="color:var(--green);background:rgba(34,197,94,0.13)"></span>
+      <span class="badge" id="b-lang-badge" style="color:var(--purple);background:rgba(168,85,247,0.13)"></span>
+      <button class="save-build-btn" id="save-build-btn" onclick="saveBuild()">💾 Save</button>
+    </div>
+  </div>
+  <div class="prog-bar-wrap" id="prog-bar-wrap">
+    <div class="prog-bar-track"><div class="prog-bar-fill" id="prog-bar" style="width:0%"></div></div>
+    <div class="prog-bar-row">
+      <span style="color:var(--muted)" id="prog-text">0 of 0 steps done</span>
+      <span id="prog-pct" style="font-weight:700;color:var(--orange)">0%</span>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('steps',this)">📋 STEPS</button>
+    <button class="tab-btn" onclick="switchTab('parts',this)">🔩 PARTS</button>
+    <button class="tab-btn" onclick="switchTab('safety',this)">🛡 SAFETY</button>
+    <button class="tab-btn" onclick="switchTab('chat',this)">💬 ASK</button>
+  </div>
+  <div id="steps-tab"  class="tab-content active"></div>
+  <div id="parts-tab"  class="tab-content"></div>
+  <div id="safety-tab" class="tab-content"></div>
+  <div id="chat-tab"   class="tab-content">
+    <div class="chat-wrap">
+      <div class="chat-messages" id="chat-messages"></div>
+      <div class="chat-foot">
+        <div class="chat-upload-row">
+          <label class="chat-upload-btn">
+            📷 Send photo
+            <input type="file" id="chat-img-input" accept="image/*" onchange="handleChatImage(this)"/>
+          </label>
+          <div id="chat-img-preview-wrap"></div>
         </div>
-        <button class="user-btn" id="user-btn" onclick="handleUserBtn()">Sign In</button>
-      </div>
-    </div>
-    <div style="flex:1;overflow-y:auto;padding-bottom:20px">
-      <div class="hero">
-        <div class="eyebrow" id="hero-eyebrow">AI MAKER GUIDE</div>
-        <h1 id="hero-title">Build<br/><span>anything.</span></h1>
-        <p id="hero-sub">Describe what you want to make — get precise tools, rare parts sourcing, safety guide, and step-by-step instructions in your language.</p>
-        <div class="input-box">
-          <textarea id="main-prompt" rows="3" maxlength="280" oninput="updateChar()" placeholder="What do you want to build?"></textarea>
-          <div class="input-foot">
-            <span class="char-c" id="char-count">0/280</span>
-            <button class="next-btn" onclick="goToLevel()" id="next-btn">Next →</button>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="saved-section" style="display:none">
-        <div class="sec-lbl">MY BUILDS</div>
-        <div id="saved-list"></div>
-      </div>
-      <div class="section">
-        <div class="sec-lbl" id="examples-lbl">IDEAS TO START WITH</div>
-        <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A computer cockpit gaming chair setup</span></button>
-        <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A standing desk from plywood and steel pipes</span></button>
-        <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A vertical herb garden from PVC pipes</span></button>
-        <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A Raspberry Pi home security camera</span></button>
-        <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>A wooden storage bench with hidden compartment</span></button>
-        <button class="ex-chip" onclick="useExample(this)"><span class="arr">→</span><span>An LED ring light for video calls</span></button>
-      </div>
-    </div>
-  </div>
-
-  <!-- LEVEL -->
-  <div id="level-screen" class="screen">
-    <div style="padding:28px 20px;flex:1;overflow-y:auto">
-      <button class="back-btn" onclick="showScreen('home')">← Back</button>
-      <div class="lvl-title" id="lvl-title">Your skill level?</div>
-      <div class="lvl-sub" id="lvl-sub">This shapes how detailed the instructions get.</div>
-      <button class="lvl-card" onclick="selectLevel('beginner',this)">
-        <div class="lvl-icon">🌱</div>
-        <div style="flex:1"><div class="lvl-name" id="ln-b">Beginner</div><div class="lvl-desc" id="ld-b">First project, basic tools only</div></div>
-      </button>
-      <button class="lvl-card" onclick="selectLevel('intermediate',this)">
-        <div class="lvl-icon">⚙️</div>
-        <div style="flex:1"><div class="lvl-name" id="ln-i">Intermediate</div><div class="lvl-desc" id="ld-i">Some experience, power tools ok</div></div>
-      </button>
-      <button class="lvl-card" onclick="selectLevel('advanced',this)">
-        <div class="lvl-icon">🔥</div>
-        <div style="flex:1"><div class="lvl-name" id="ln-a">Advanced</div><div class="lvl-desc" id="ld-a">Comfortable with complex builds</div></div>
-      </button>
-      <button class="build-btn" id="build-btn" onclick="startBuild()" style="display:none">⚡ Generate My Build Plan</button>
-    </div>
-  </div>
-
-  <!-- LOADING -->
-  <div id="loading-screen" class="screen">
-    <div class="load-header">
-      <button class="load-back" onclick="showScreen('home');stopLoading()">← Back</button>
-      <div class="load-sub-txt" id="load-sub-txt">Generating your build plan...</div>
-    </div>
-    <div class="load-body">
-      <div class="assembly-area">
-        <svg id="assembly-svg" width="300" height="220" style="overflow:visible">
-          <defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-          <line x1="0" y1="44" x2="300" y2="44" stroke="#252836" stroke-width="0.5"/>
-          <line x1="0" y1="88" x2="300" y2="88" stroke="#252836" stroke-width="0.5"/>
-          <line x1="0" y1="132" x2="300" y2="132" stroke="#252836" stroke-width="0.5"/>
-          <line x1="0" y1="176" x2="300" y2="176" stroke="#252836" stroke-width="0.5"/>
-          <line x1="60" y1="0" x2="60" y2="220" stroke="#252836" stroke-width="0.5"/>
-          <line x1="120" y1="0" x2="120" y2="220" stroke="#252836" stroke-width="0.5"/>
-          <line x1="180" y1="0" x2="180" y2="220" stroke="#252836" stroke-width="0.5"/>
-          <line x1="240" y1="0" x2="240" y2="220" stroke="#252836" stroke-width="0.5"/>
-          <rect id="p-base"   x="90"  y="155" width="120" height="16" rx="3"  fill="#ff6b2b" opacity="0"/>
-          <rect id="p-leftl"  x="90"  y="60"  width="12"  height="95" rx="2"  fill="#3d9eff" opacity="0"/>
-          <rect id="p-rightl" x="198" y="60"  width="12"  height="95" rx="2"  fill="#3d9eff" opacity="0"/>
-          <rect id="p-arch"   x="90"  y="48"  width="120" height="22" rx="11" fill="#ff6b2b" opacity="0"/>
-          <rect id="p-seat"   x="108" y="105" width="84"  height="50" rx="4"  fill="#1a1d27" opacity="0"/>
-          <rect id="p-mon"    x="115" y="62"  width="70"  height="40" rx="3"  fill="#13151c" opacity="0"/>
-          <rect id="p-monb"   x="115" y="62"  width="70"  height="40" rx="3"  fill="none" stroke="#3d9eff" stroke-width="1.5" opacity="0"/>
-          <rect id="p-kbd"    x="100" y="128" width="50"  height="10" rx="2"  fill="#1a1d27" opacity="0"/>
-          <rect id="p-glow"   x="90"  y="168" width="120" height="4"  rx="2"  fill="#ff6b2b" opacity="0"/>
-          <circle id="j1" cx="90"  cy="60"  r="4" fill="#ff6b2b" opacity="0" filter="url(#glow)"/>
-          <circle id="j2" cx="210" cy="60"  r="4" fill="#ff6b2b" opacity="0" filter="url(#glow)"/>
-          <circle id="j3" cx="90"  cy="155" r="4" fill="#ff6b2b" opacity="0" filter="url(#glow)"/>
-          <circle id="j4" cx="210" cy="155" r="4" fill="#ff6b2b" opacity="0" filter="url(#glow)"/>
-          <g id="complete-mark" opacity="0">
-            <circle cx="150" cy="100" r="24" fill="#22c55e" opacity="0.12" filter="url(#glow)"/>
-            <polyline points="138,100 146,109 163,90" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          </g>
-        </svg>
-      </div>
-      <div class="prog-wrap">
-        <div class="prog-track"><div class="prog-fill" id="load-prog" style="width:0%"></div></div>
-        <div class="load-msg" id="load-msg">Scanning your project...</div>
-      </div>
-      <div class="load-project" id="load-project"></div>
-    </div>
-  </div>
-
-  <!-- BUILD -->
-  <div id="build-screen" class="screen">
-    <div class="b-header">
-      <button class="b-back" onclick="showScreen('home')">← New Build</button>
-      <div class="b-title" id="b-title"></div>
-      <div class="b-meta">
-        <span class="badge" id="b-time" style="color:var(--orange);background:rgba(255,107,43,0.13)"></span>
-        <span class="badge" id="b-cost" style="color:var(--green);background:rgba(34,197,94,0.13)"></span>
-        <span class="badge" id="b-lang-badge" style="color:var(--purple);background:rgba(168,85,247,0.13)"></span>
-        <button class="save-build-btn" id="save-build-btn" onclick="saveBuild()">💾 Save</button>
-      </div>
-    </div>
-    <div class="prog-bar-wrap" id="prog-bar-wrap">
-      <div class="prog-bar-track"><div class="prog-bar-fill" id="prog-bar" style="width:0%"></div></div>
-      <div class="prog-bar-row">
-        <span style="color:var(--muted)" id="prog-text">0 of 0 steps done</span>
-        <span id="prog-pct" style="font-weight:700;color:var(--orange)">0%</span>
-      </div>
-    </div>
-    <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('steps',this)">📋 STEPS</button>
-      <button class="tab-btn" onclick="switchTab('parts',this)">🔩 PARTS</button>
-      <button class="tab-btn" onclick="switchTab('safety',this)">🛡 SAFETY</button>
-      <button class="tab-btn" onclick="switchTab('chat',this)">💬 ASK</button>
-    </div>
-    <div id="steps-tab"  class="tab-content active"></div>
-    <div id="parts-tab"  class="tab-content"></div>
-    <div id="safety-tab" class="tab-content"></div>
-    <div id="chat-tab"   class="tab-content">
-      <div class="chat-wrap">
-        <div class="chat-messages" id="chat-messages"></div>
-        <div class="chat-foot">
+        <div class="chat-input-row">
           <textarea class="chat-input" id="chat-input" rows="1"
-            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"></textarea>
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"
+            placeholder="Ask anything about this build..."></textarea>
           <button class="send-btn" onclick="sendChat()">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -365,56 +400,123 @@ textarea,input{font-family:inherit}
       </div>
     </div>
   </div>
+</div>
 
 </div>
 <script>
 // ── CONFIG ────────────────────────────────────────────────────
 const SUPABASE_URL  = "https://dmemzljerldzeiwqfxzp.supabase.co";
-const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtZW16bGplcmxkemVpd3FmeHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NDMxNzgsImV4cCI6MjA5NDIxOTE3OH0.u4FL1mk555dUesVNjF58pXwkQlvvQYQgR5JpcxRtB40";
+const SUPABASE_ANON = "YOUR_SUPABASE_ANON_KEY";
 const WORKER_URL    = "https://iguide-worker.infomomtelo.workers.dev";
 const REDIRECT_URL  = "https://iguide-7ln.pages.dev";
 
-// ── STATE ──────────────────────────────────────────────────────
+// ── STATE ─────────────────────────────────────────────────────
 let sb, currentUser, currentPlan, currentLevel, currentPrompt;
 let doneSteps = new Set();
 let aiLoading = false;
 let animRunning = false;
+let uploadedImageB64 = null;
+let uploadedImageType = null;
+let uploadedFileName = null;
+let chatImageB64 = null;
+let chatImageType = null;
 let currentLang = { code:'en', label:'EN', flag:'🇺🇸', name:'English' };
 
-// ── LANGUAGE DATA ──────────────────────────────────────────────
+// ── LANG UI ───────────────────────────────────────────────────
 const LANG_UI = {
-  en: { eyebrow:'AI MAKER GUIDE', h1:'Build<br/><span>anything.</span>', sub:'Describe what you want to make — get precise tools, rare parts sourcing, safety guide, and step-by-step instructions in your language.', placeholder:'What do you want to build?', nextBtn:'Next →', exLbl:'IDEAS TO START WITH', lvlTitle:'Your skill level?', lvlSub:'This shapes how detailed the instructions get.', ln:['Beginner','Intermediate','Advanced'], ld:['First project, basic tools only','Some experience, power tools ok','Comfortable with complex builds'], buildBtn:'⚡ Generate My Build Plan', loadSub:'Generating your build plan...', loadMsgs:['Scanning your project...','Sourcing rare parts...','Calculating precision steps...','Writing safety checklist...','Assembling instructions...','Almost ready...'], chatPlaceholder:'Ask anything about this build...' },
-  es: { eyebrow:'GUÍA DE CONSTRUCCIÓN IA', h1:'Construye<br/><span>cualquier cosa.</span>', sub:'Describe lo que quieres hacer — obtén herramientas precisas, partes especiales, guía de seguridad e instrucciones paso a paso en tu idioma.', placeholder:'¿Qué quieres construir?', nextBtn:'Siguiente →', exLbl:'IDEAS PARA EMPEZAR', lvlTitle:'¿Tu nivel de habilidad?', lvlSub:'Esto define qué tan detalladas serán las instrucciones.', ln:['Principiante','Intermedio','Avanzado'], ld:['Primer proyecto, solo herramientas básicas','Algo de experiencia, se permiten herramientas eléctricas','Cómodo con construcciones complejas'], buildBtn:'⚡ Generar Mi Plan', loadSub:'Generando tu plan de construcción...', loadMsgs:['Escaneando tu proyecto...','Buscando partes especiales...','Calculando pasos precisos...','Escribiendo lista de seguridad...','Ensamblando instrucciones...','Casi listo...'], chatPlaceholder:'Pregunta lo que quieras sobre esta construcción...' },
-  pt: { eyebrow:'GUIA DE CONSTRUÇÃO IA', h1:'Construa<br/><span>qualquer coisa.</span>', sub:'Descreva o que quer fazer — obtenha ferramentas precisas, peças especiais, guia de segurança e instruções passo a passo no seu idioma.', placeholder:'O que você quer construir?', nextBtn:'Próximo →', exLbl:'IDEIAS PARA COMEÇAR', lvlTitle:'Seu nível de habilidade?', lvlSub:'Isso define o quão detalhadas serão as instruções.', ln:['Iniciante','Intermediário','Avançado'], ld:['Primeiro projeto, apenas ferramentas básicas','Alguma experiência, ferramentas elétricas ok','Confortável com construções complexas'], buildBtn:'⚡ Gerar Meu Plano', loadSub:'Gerando seu plano de construção...', loadMsgs:['Verificando seu projeto...','Buscando peças especiais...','Calculando etapas precisas...','Escrevendo lista de segurança...','Montando instruções...','Quase pronto...'], chatPlaceholder:'Pergunte qualquer coisa sobre esta construção...' },
-  tl: { eyebrow:'AI GABAY SA PAGGAWA', h1:'Gumawa ng<br/><span>kahit ano.</span>', sub:'Ilarawan ang gusto mong gawin — makakuha ng eksaktong mga kasangkapan, espesyal na mga parte, gabay sa kaligtasan, at sunud-sunod na instruksyon sa iyong wika.', placeholder:'Ano ang gusto mong itayo?', nextBtn:'Susunod →', exLbl:'MGA IDEYA PARA MAGSIMULA', lvlTitle:'Ano ang iyong antas ng kasanayan?', lvlSub:'Ito ang magtatakda kung gaano ka-detalyado ang mga instruksyon.', ln:['Baguhan','Katamtaman','Bihasa'], ld:['Unang proyekto, pangunahing kagamitan lamang','May karanasan na, okay ang power tools','Komportable sa kumplikadong mga gawa'], buildBtn:'⚡ Gumawa ng Plano', loadSub:'Ginagawa ang iyong plano...', loadMsgs:['Sinusuri ang iyong proyekto...','Naghahanap ng espesyal na parte...','Kinakalkula ang mga hakbang...','Isinusulat ang listahan ng kaligtasan...','Pinagsasama-sama ang mga instruksyon...','Halos tapos na...'], chatPlaceholder:'Magtanong tungkol sa build na ito...' },
-  vi: { eyebrow:'HƯỚNG DẪN LÀM THỦ CÔNG AI', h1:'Xây dựng<br/><span>bất cứ thứ gì.</span>', sub:'Mô tả những gì bạn muốn làm — nhận công cụ chính xác, linh kiện đặc biệt, hướng dẫn an toàn và hướng dẫn từng bước bằng ngôn ngữ của bạn.', placeholder:'Bạn muốn xây dựng gì?', nextBtn:'Tiếp theo →', exLbl:'Ý TƯỞNG ĐỂ BẮT ĐẦU', lvlTitle:'Trình độ kỹ năng của bạn?', lvlSub:'Điều này định hình mức độ chi tiết của hướng dẫn.', ln:['Người mới bắt đầu','Trung cấp','Nâng cao'], ld:['Dự án đầu tiên, chỉ dùng công cụ cơ bản','Có kinh nghiệm, dùng được máy móc','Thoải mái với các công trình phức tạp'], buildBtn:'⚡ Tạo Kế Hoạch Xây Dựng', loadSub:'Đang tạo kế hoạch xây dựng...', loadMsgs:['Đang quét dự án...','Tìm kiếm linh kiện đặc biệt...','Tính toán các bước chính xác...','Viết danh sách an toàn...','Lắp ráp hướng dẫn...','Gần xong rồi...'], chatPlaceholder:'Hỏi bất cứ điều gì về công trình này...' },
-  zh: { eyebrow:'AI 制作指南', h1:'制作<br/><span>任何东西。</span>', sub:'描述你想制作的东西 — 获取精确工具、特殊零件来源、安全指南以及用你的语言写成的分步说明。', placeholder:'你想制作什么？', nextBtn:'下一步 →', exLbl:'创意灵感', lvlTitle:'你的技能水平？', lvlSub:'这将决定说明书的详细程度。', ln:['初学者','中级','高级'], ld:['第一个项目，只需基本工具','有一定经验，可以使用电动工具','熟悉复杂的制作项目'], buildBtn:'⚡ 生成我的制作计划', loadSub:'正在生成你的制作计划...', loadMsgs:['正在扫描你的项目...','正在寻找特殊零件...','正在计算精确步骤...','正在撰写安全清单...','正在整合说明...','即将完成...'], chatPlaceholder:'询问有关此制作的任何问题...' },
-  fr: { eyebrow:'GUIDE FABRICATION IA', h1:'Construire<br/><span>n\'importe quoi.</span>', sub:'Décrivez ce que vous voulez créer — obtenez des outils précis, des pièces rares, un guide de sécurité et des instructions étape par étape dans votre langue.', placeholder:'Que voulez-vous construire?', nextBtn:'Suivant →', exLbl:'IDÉES POUR COMMENCER', lvlTitle:'Votre niveau de compétence?', lvlSub:'Cela détermine le niveau de détail des instructions.', ln:['Débutant','Intermédiaire','Avancé'], ld:['Premier projet, outils de base seulement','Quelque expérience, outils électriques ok','À l\'aise avec des constructions complexes'], buildBtn:'⚡ Générer Mon Plan', loadSub:'Génération de votre plan...', loadMsgs:['Analyse de votre projet...','Recherche de pièces rares...','Calcul des étapes précises...','Rédaction de la checklist sécurité...','Assemblage des instructions...','Presque prêt...'], chatPlaceholder:'Posez des questions sur cette construction...' },
-  hi: { eyebrow:'AI मेकर गाइड', h1:'कुछ भी<br/><span>बनाओ।</span>', sub:'बताएं आप क्या बनाना चाहते हैं — सटीक टूल्स, दुर्लभ पार्ट्स, सुरक्षा गाइड और आपकी भाषा में चरण-दर-चरण निर्देश पाएं।', placeholder:'आप क्या बनाना चाहते हैं?', nextBtn:'अगला →', exLbl:'शुरू करने के लिए विचार', lvlTitle:'आपका कौशल स्तर?', lvlSub:'इससे निर्देशों का विस्तार तय होगा।', ln:['शुरुआती','मध्यम','उन्नत'], ld:['पहला प्रोजेक्ट, केवल बुनियादी टूल्स','कुछ अनुभव, इलेक्ट्रिक टूल्स ठीक हैं','जटिल निर्माण में सहज'], buildBtn:'⚡ मेरा बिल्ड प्लान बनाएं', loadSub:'आपका बिल्ड प्लान तैयार हो रहा है...', loadMsgs:['आपका प्रोजेक्ट स्कैन हो रहा है...','दुर्लभ पार्ट्स खोजे जा रहे हैं...','सटीक चरण गणना हो रही है...','सुरक्षा सूची तैयार हो रही है...','निर्देश जोड़े जा रहे हैं...','लगभग तैयार...'], chatPlaceholder:'इस बिल्ड के बारे में कुछ भी पूछें...' },
-  pa: { eyebrow:'AI ਮੇਕਰ ਗਾਈਡ', h1:'ਕੁਝ ਵੀ<br/><span>ਬਣਾਓ।</span>', sub:'ਦੱਸੋ ਤੁਸੀਂ ਕੀ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ — ਸਹੀ ਸੰਦ, ਦੁਰਲੱਭ ਪਾਰਟਸ, ਸੁਰੱਖਿਆ ਗਾਈਡ ਅਤੇ ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਵਿੱਚ ਕਦਮ-ਦਰ-ਕਦਮ ਨਿਰਦੇਸ਼ ਪਾਓ।', placeholder:'ਤੁਸੀਂ ਕੀ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?', nextBtn:'ਅਗਲਾ →', exLbl:'ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਵਿਚਾਰ', lvlTitle:'ਤੁਹਾਡਾ ਕੌਸ਼ਲ ਪੱਧਰ?', lvlSub:'ਇਹ ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਵਿਸਤਾਰਤਾ ਤੈਅ ਕਰੇਗਾ।', ln:['ਸ਼ੁਰੂਆਤੀ','ਵਿਚਕਾਰਲਾ','ਉੱਨਤ'], ld:['ਪਹਿਲਾ ਪ੍ਰੋਜੈਕਟ, ਸਿਰਫ਼ ਬੁਨਿਆਦੀ ਸੰਦ','ਕੁਝ ਤਜ਼ਰਬਾ, ਬਿਜਲੀ ਦੇ ਸੰਦ ਠੀਕ ਹਨ','ਗੁੰਝਲਦਾਰ ਉਸਾਰੀ ਵਿੱਚ ਆਰਾਮਦਾਇਕ'], buildBtn:'⚡ ਮੇਰਾ ਬਿਲਡ ਪਲਾਨ ਬਣਾਓ', loadSub:'ਤੁਹਾਡਾ ਬਿਲਡ ਪਲਾਨ ਤਿਆਰ ਹੋ ਰਿਹਾ ਹੈ...', loadMsgs:['ਤੁਹਾਡਾ ਪ੍ਰੋਜੈਕਟ ਸਕੈਨ ਹੋ ਰਿਹਾ ਹੈ...','ਦੁਰਲੱਭ ਪਾਰਟਸ ਲੱਭੇ ਜਾ ਰਹੇ ਹਨ...','ਸਹੀ ਕਦਮ ਗਿਣੇ ਜਾ ਰਹੇ ਹਨ...','ਸੁਰੱਖਿਆ ਸੂਚੀ ਲਿਖੀ ਜਾ ਰਹੀ ਹੈ...','ਨਿਰਦੇਸ਼ ਜੋੜੇ ਜਾ ਰਹੇ ਹਨ...','ਲਗਭਗ ਤਿਆਰ...'], chatPlaceholder:'ਇਸ ਬਿਲਡ ਬਾਰੇ ਕੁਝ ਵੀ ਪੁੱਛੋ...' },
-  de: { eyebrow:'KI MAKER-GUIDE', h1:'Baue<br/><span>alles.</span>', sub:'Beschreibe was du bauen möchtest — erhalte präzise Werkzeuge, seltene Teile, Sicherheitsanleitung und Schritt-für-Schritt-Anleitung in deiner Sprache.', placeholder:'Was möchtest du bauen?', nextBtn:'Weiter →', exLbl:'IDEEN ZUM STARTEN', lvlTitle:'Dein Fähigkeitslevel?', lvlSub:'Das bestimmt wie detailliert die Anleitung wird.', ln:['Anfänger','Fortgeschritten','Experte'], ld:['Erstes Projekt, nur Grundwerkzeug','Etwas Erfahrung, Elektrowerkzeug ok','Vertraut mit komplexen Projekten'], buildBtn:'⚡ Plan Generieren', loadSub:'Dein Bauplan wird erstellt...', loadMsgs:['Projekt wird gescannt...','Seltene Teile werden gesucht...','Präzise Schritte werden berechnet...','Sicherheitsliste wird geschrieben...','Anleitung wird zusammengestellt...','Fast fertig...'], chatPlaceholder:'Frag alles über dieses Projekt...' },
+  en:{ eyebrow:'AI MAKER GUIDE', h1:'Build<br/><span>anything.</span>', sub:'Describe what you want to make — or snap a photo. Get precise tools, rare parts sourcing, safety guide, and step-by-step instructions in your language.', placeholder:'What do you want to build?', nextBtn:'Next →', exLbl:'IDEAS TO START WITH', lvlTitle:'Your skill level?', lvlSub:'This shapes how detailed the instructions get.', ln:['Beginner','Intermediate','Advanced'], ld:['First project, basic tools only','Some experience, power tools ok','Comfortable with complex builds'], buildBtn:'⚡ Generate My Build Plan', loadSub:'Generating your build plan...', loadMsgs:['Scanning your project...','Analyzing your photo...','Sourcing rare parts...','Calculating precision steps...','Writing safety checklist...','Almost ready...'], chatPH:'Ask anything about this build...' },
+  es:{ eyebrow:'GUÍA DE CONSTRUCCIÓN IA', h1:'Construye<br/><span>cualquier cosa.</span>', sub:'Describe lo que quieres hacer — o toma una foto. Obtén herramientas precisas, partes especiales, guía de seguridad e instrucciones paso a paso en tu idioma.', placeholder:'¿Qué quieres construir?', nextBtn:'Siguiente →', exLbl:'IDEAS PARA EMPEZAR', lvlTitle:'¿Tu nivel de habilidad?', lvlSub:'Esto define qué tan detalladas serán las instrucciones.', ln:['Principiante','Intermedio','Avanzado'], ld:['Primer proyecto, solo herramientas básicas','Algo de experiencia, herramientas eléctricas ok','Cómodo con construcciones complejas'], buildBtn:'⚡ Generar Mi Plan', loadSub:'Generando tu plan de construcción...', loadMsgs:['Escaneando tu proyecto...','Analizando tu foto...','Buscando partes especiales...','Calculando pasos precisos...','Escribiendo lista de seguridad...','Casi listo...'], chatPH:'Pregunta lo que quieras...' },
+  pt:{ eyebrow:'GUIA DE CONSTRUÇÃO IA', h1:'Construa<br/><span>qualquer coisa.</span>', sub:'Descreva o que quer fazer — ou tire uma foto. Obtenha ferramentas precisas, peças especiais e instruções passo a passo no seu idioma.', placeholder:'O que você quer construir?', nextBtn:'Próximo →', exLbl:'IDEIAS PARA COMEÇAR', lvlTitle:'Seu nível de habilidade?', lvlSub:'Isso define o quão detalhadas serão as instruções.', ln:['Iniciante','Intermediário','Avançado'], ld:['Primeiro projeto, ferramentas básicas','Alguma experiência, ferramentas elétricas ok','Confortável com construções complexas'], buildBtn:'⚡ Gerar Meu Plano', loadSub:'Gerando seu plano...', loadMsgs:['Verificando projeto...','Analisando sua foto...','Buscando peças especiais...','Calculando etapas...','Escrevendo segurança...','Quase pronto...'], chatPH:'Pergunte qualquer coisa...' },
+  tl:{ eyebrow:'AI GABAY SA PAGGAWA', h1:'Gumawa ng<br/><span>kahit ano.</span>', sub:'Ilarawan ang gusto mong gawin — o kumuha ng larawan. Makakuha ng eksaktong mga kasangkapan, espesyal na parte, at sunud-sunod na instruksyon sa iyong wika.', placeholder:'Ano ang gusto mong itayo?', nextBtn:'Susunod →', exLbl:'MGA IDEYA', lvlTitle:'Ano ang iyong antas?', lvlSub:'Ito ang magtatakda ng detalye ng instruksyon.', ln:['Baguhan','Katamtaman','Bihasa'], ld:['Unang proyekto lamang','May karanasan na','Komportable sa kumplikado'], buildBtn:'⚡ Gumawa ng Plano', loadSub:'Ginagawa ang iyong plano...', loadMsgs:['Sinusuri...','Iniaanalisa ang larawan...','Naghahanap ng parte...','Kinakalkula...','Isinusulat kaligtasan...','Halos tapos...'], chatPH:'Magtanong tungkol sa build...' },
+  vi:{ eyebrow:'HƯỚNG DẪN LÀM THỦ CÔNG AI', h1:'Xây dựng<br/><span>bất cứ thứ gì.</span>', sub:'Mô tả những gì bạn muốn làm — hoặc chụp ảnh. Nhận hướng dẫn từng bước bằng ngôn ngữ của bạn.', placeholder:'Bạn muốn xây dựng gì?', nextBtn:'Tiếp theo →', exLbl:'Ý TƯỞNG', lvlTitle:'Trình độ kỹ năng?', lvlSub:'Điều này định hình mức độ chi tiết.', ln:['Người mới','Trung cấp','Nâng cao'], ld:['Dự án đầu tiên','Có kinh nghiệm','Thoải mái với phức tạp'], buildBtn:'⚡ Tạo Kế Hoạch', loadSub:'Đang tạo kế hoạch...', loadMsgs:['Đang quét...','Phân tích ảnh...','Tìm linh kiện...','Tính toán...','Viết an toàn...','Gần xong...'], chatPH:'Hỏi về công trình này...' },
+  zh:{ eyebrow:'AI 制作指南', h1:'制作<br/><span>任何东西。</span>', sub:'描述你想制作的东西 — 或拍张照片。获取精确工具和分步说明。', placeholder:'你想制作什么？', nextBtn:'下一步 →', exLbl:'创意灵感', lvlTitle:'你的技能水平？', lvlSub:'这将决定说明书的详细程度。', ln:['初学者','中级','高级'], ld:['第一个项目','有一定经验','熟悉复杂项目'], buildBtn:'⚡ 生成制作计划', loadSub:'正在生成计划...', loadMsgs:['正在扫描...','分析照片...','寻找零件...','计算步骤...','撰写安全...','即将完成...'], chatPH:'询问有关此制作的问题...' },
+  fr:{ eyebrow:'GUIDE FABRICATION IA', h1:'Construire<br/><span>n\'importe quoi.</span>', sub:'Décrivez ce que vous voulez créer — ou prenez une photo. Obtenez des instructions étape par étape dans votre langue.', placeholder:'Que voulez-vous construire?', nextBtn:'Suivant →', exLbl:'IDÉES', lvlTitle:'Votre niveau?', lvlSub:'Cela détermine le niveau de détail.', ln:['Débutant','Intermédiaire','Avancé'], ld:['Premier projet','Quelque expérience','À l\'aise avec le complexe'], buildBtn:'⚡ Générer Mon Plan', loadSub:'Génération en cours...', loadMsgs:['Analyse...','Analyse photo...','Recherche pièces...','Calcul étapes...','Sécurité...','Presque prêt...'], chatPH:'Posez des questions...' },
+  de:{ eyebrow:'KI MAKER-GUIDE', h1:'Baue<br/><span>alles.</span>', sub:'Beschreibe was du bauen möchtest — oder mach ein Foto. Erhalte Schritt-für-Schritt-Anleitungen in deiner Sprache.', placeholder:'Was möchtest du bauen?', nextBtn:'Weiter →', exLbl:'IDEEN', lvlTitle:'Dein Level?', lvlSub:'Das bestimmt den Detailgrad.', ln:['Anfänger','Fortgeschritten','Experte'], ld:['Erstes Projekt','Etwas Erfahrung','Vertraut mit Komplexem'], buildBtn:'⚡ Plan Generieren', loadSub:'Plan wird erstellt...', loadMsgs:['Scannen...','Foto analysieren...','Teile suchen...','Schritte berechnen...','Sicherheit...','Fast fertig...'], chatPH:'Frag alles über dieses Projekt...' },
+  hi:{ eyebrow:'AI मेकर गाइड', h1:'कुछ भी<br/><span>बनाओ।</span>', sub:'बताएं आप क्या बनाना चाहते हैं — या फोटो लें। अपनी भाषा में चरण-दर-चरण निर्देश पाएं।', placeholder:'आप क्या बनाना चाहते हैं?', nextBtn:'अगला →', exLbl:'विचार', lvlTitle:'आपका कौशल स्तर?', lvlSub:'इससे निर्देशों का विस्तार तय होगा।', ln:['शुरुआती','मध्यम','उन्नत'], ld:['पहला प्रोजेक्ट','कुछ अनुभव','जटिल में सहज'], buildBtn:'⚡ प्लान बनाएं', loadSub:'प्लान तैयार हो रहा है...', loadMsgs:['स्कैन हो रहा है...','फोटो विश्लेषण...','पार्ट्स खोजे जा रहे हैं...','कदम गणना...','सुरक्षा सूची...','लगभग तैयार...'], chatPH:'इस बिल्ड के बारे में पूछें...' },
+  pa:{ eyebrow:'AI ਮੇਕਰ ਗਾਈਡ', h1:'ਕੁਝ ਵੀ<br/><span>ਬਣਾਓ।</span>', sub:'ਦੱਸੋ ਤੁਸੀਂ ਕੀ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ — ਜਾਂ ਫੋਟੋ ਲਓ। ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਕਦਮ-ਦਰ-ਕਦਮ ਨਿਰਦੇਸ਼ ਪਾਓ।', placeholder:'ਤੁਸੀਂ ਕੀ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?', nextBtn:'ਅਗਲਾ →', exLbl:'ਵਿਚਾਰ', lvlTitle:'ਤੁਹਾਡਾ ਕੌਸ਼ਲ ਪੱਧਰ?', lvlSub:'ਇਹ ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਵਿਸਤਾਰਤਾ ਤੈਅ ਕਰੇਗਾ।', ln:['ਸ਼ੁਰੂਆਤੀ','ਵਿਚਕਾਰਲਾ','ਉੱਨਤ'], ld:['ਪਹਿਲਾ ਪ੍ਰੋਜੈਕਟ','ਕੁਝ ਤਜ਼ਰਬਾ','ਗੁੰਝਲਦਾਰ ਵਿੱਚ ਆਰਾਮਦਾਇਕ'], buildBtn:'⚡ ਪਲਾਨ ਬਣਾਓ', loadSub:'ਪਲਾਨ ਤਿਆਰ ਹੋ ਰਿਹਾ ਹੈ...', loadMsgs:['ਸਕੈਨ ਹੋ ਰਿਹਾ ਹੈ...','ਫੋਟੋ ਵਿਸ਼ਲੇਸ਼ਣ...','ਪਾਰਟਸ ਲੱਭੇ ਜਾ ਰਹੇ ਹਨ...','ਕਦਮ ਗਿਣੇ ਜਾ ਰਹੇ ਹਨ...','ਸੁਰੱਖਿਆ ਸੂਚੀ...','ਲਗਭਗ ਤਿਆਰ...'], chatPH:'ਇਸ ਬਿਲਡ ਬਾਰੇ ਕੁਝ ਵੀ ਪੁੱਛੋ...' },
 };
 
-// ── LANGUAGE FUNCTIONS ─────────────────────────────────────────
-function toggleLangMenu() {
-  document.getElementById('lang-dropdown').classList.toggle('open');
+// ── FILE TO BASE64 ────────────────────────────────────────────
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 }
+
+// ── IMAGE UPLOAD (HOME) ───────────────────────────────────────
+async function handleImageUpload(input) {
+  const file = input.files[0];
+  if (!file) return;
+  uploadedImageB64 = await fileToBase64(file);
+  uploadedImageType = file.type;
+  uploadedFileName = null;
+  const previews = document.getElementById('upload-previews');
+  const url = URL.createObjectURL(file);
+  previews.innerHTML = `<div class="preview-wrap">
+    <img src="${url}" class="img-preview"/>
+    <button class="img-remove" onclick="clearUpload()">✕</button>
+  </div>`;
+  if (!document.getElementById('main-prompt').value.trim())
+    document.getElementById('main-prompt').value = "Build something based on this image";
+  updateChar();
+}
+
+async function handleFileUpload(input) {
+  const file = input.files[0];
+  if (!file) return;
+  uploadedFileName = file.name;
+  uploadedImageB64 = null;
+  uploadedImageType = null;
+  const previews = document.getElementById('upload-previews');
+  previews.innerHTML = `<div class="file-preview">📄 ${file.name}<button class="file-remove" onclick="clearUpload()">✕</button></div>`;
+  if (!document.getElementById('main-prompt').value.trim())
+    document.getElementById('main-prompt').value = `Build something based on this file: ${file.name}`;
+  updateChar();
+}
+
+function clearUpload() {
+  uploadedImageB64 = null; uploadedImageType = null; uploadedFileName = null;
+  document.getElementById('upload-previews').innerHTML = '';
+  document.getElementById('img-upload').value = '';
+  document.getElementById('file-upload').value = '';
+}
+
+// ── CHAT IMAGE ────────────────────────────────────────────────
+async function handleChatImage(input) {
+  const file = input.files[0];
+  if (!file) return;
+  chatImageB64 = await fileToBase64(file);
+  chatImageType = file.type;
+  const url = URL.createObjectURL(file);
+  document.getElementById('chat-img-preview-wrap').innerHTML =
+    `<img src="${url}" class="chat-img-preview"/>
+     <button class="chat-img-remove" onclick="clearChatImage()">✕</button>`;
+}
+
+function clearChatImage() {
+  chatImageB64 = null; chatImageType = null;
+  document.getElementById('chat-img-preview-wrap').innerHTML = '';
+  document.getElementById('chat-img-input').value = '';
+}
+
+// ── LANG ──────────────────────────────────────────────────────
+function toggleLangMenu() { document.getElementById('lang-dropdown').classList.toggle('open'); }
 document.addEventListener('click', e => {
   if (!e.target.closest('.lang-btn') && !e.target.closest('.lang-dropdown'))
     document.getElementById('lang-dropdown').classList.remove('open');
 });
-
 function setLang(code, label, flag, name) {
   currentLang = { code, label, flag, name };
   document.getElementById('lang-flag').textContent = flag;
   document.getElementById('lang-code').textContent = label;
   document.querySelectorAll('[id^="lc-"]').forEach(el => el.style.display = 'none');
-  const check = document.getElementById('lc-' + code);
-  if (check) check.style.display = 'inline';
+  const c = document.getElementById('lc-'+code); if(c) c.style.display='inline';
   document.getElementById('lang-dropdown').classList.remove('open');
   applyLangUI();
 }
-
 function applyLangUI() {
   const L = LANG_UI[currentLang.code] || LANG_UI.en;
   document.getElementById('hero-eyebrow').textContent = L.eyebrow;
@@ -433,14 +535,13 @@ function applyLangUI() {
   document.getElementById('ld-a').textContent = L.ld[2];
   document.getElementById('build-btn').textContent = L.buildBtn;
   document.getElementById('load-sub-txt').textContent = L.loadSub;
-  const ci = document.getElementById('chat-input');
-  if (ci) ci.placeholder = L.chatPlaceholder;
+  const ci = document.getElementById('chat-input'); if(ci) ci.placeholder = L.chatPH;
 }
 
-// ── SUPABASE ───────────────────────────────────────────────────
+// ── SUPABASE ──────────────────────────────────────────────────
 try {
   sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
-  sb.auth.onAuthStateChange(async (event, session) => {
+  sb.auth.onAuthStateChange(async (e, session) => {
     currentUser = session?.user || null;
     updateUserBtn();
     if (currentUser) await loadSavedBuilds();
@@ -456,7 +557,7 @@ try {
 function updateUserBtn() {
   const btn = document.getElementById('user-btn');
   if (!btn) return;
-  btn.textContent = currentUser ? '👤 ' + (currentUser.user_metadata?.full_name?.split(' ')[0] || 'Me') : 'Sign In';
+  btn.textContent = currentUser ? '👤 '+(currentUser.user_metadata?.full_name?.split(' ')[0]||'Me') : 'Sign In';
 }
 function handleUserBtn() {
   if (currentUser) { if(confirm('Sign out?')) sb.auth.signOut().then(()=>{currentUser=null;updateUserBtn();document.getElementById('saved-section').style.display='none';}); }
@@ -467,13 +568,13 @@ async function signInWithGoogle() {
 }
 function skipAuth() { showScreen('home'); }
 
-// ── NAV ────────────────────────────────────────────────────────
+// ── NAV ───────────────────────────────────────────────────────
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id+'-screen').classList.add('active');
 }
 function updateChar() {
-  document.getElementById('char-count').textContent = document.getElementById('main-prompt').value.length + '/280';
+  document.getElementById('char-count').textContent = document.getElementById('main-prompt').value.length+'/280';
 }
 function useExample(btn) {
   document.getElementById('main-prompt').value = btn.querySelector('span:last-child').textContent.trim();
@@ -487,16 +588,16 @@ function goToLevel() {
 }
 function selectLevel(lvl, btn) {
   currentLevel = lvl;
-  document.querySelectorAll('.lvl-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.lvl-card').forEach(c=>c.classList.remove('selected'));
   btn.classList.add('selected');
-  document.querySelectorAll('.check-mark').forEach(c => c.remove());
-  const chk = document.createElement('span'); chk.className='check-mark'; chk.textContent='✓'; chk.style.color='var(--orange)';
+  document.querySelectorAll('.lvl-chk').forEach(c=>c.remove());
+  const chk=document.createElement('span'); chk.className='lvl-chk'; chk.textContent='✓'; chk.style.color='var(--orange)';
   btn.appendChild(chk);
-  document.getElementById('build-btn').style.display = 'block';
+  document.getElementById('build-btn').style.display='block';
 }
 
-// ── ASSEMBLY ANIMATION ─────────────────────────────────────────
-const PIECES = [
+// ── ASSEMBLY ANIMATION ────────────────────────────────────────
+const PIECES=[
   {id:'p-base',  ox:90,  oy:155, sx:0,   sy:-90},
   {id:'p-leftl', ox:90,  oy:60,  sx:-90, sy:0},
   {id:'p-rightl',ox:198, oy:60,  sx:90,  sy:0},
@@ -507,126 +608,83 @@ const PIECES = [
   {id:'p-kbd',   ox:100, oy:128, sx:-70, sy:0},
   {id:'p-glow',  ox:90,  oy:168, sx:0,   sy:70},
 ];
-
-function startAssembly(projectName) {
-  animRunning = true;
-  let frame = 0;
-  document.getElementById('load-project').textContent = projectName.length > 45 ? projectName.slice(0,45)+'...' : projectName;
-  PIECES.forEach(p => { const el=document.getElementById(p.id); if(el){el.setAttribute('x',p.ox+p.sx);el.setAttribute('y',p.oy+p.sy);el.setAttribute('opacity','0');} });
+function startAssembly(name) {
+  animRunning=true; let frame=0;
+  document.getElementById('load-project').textContent = name.length>45?name.slice(0,45)+'...':name;
+  PIECES.forEach(p=>{const el=document.getElementById(p.id);if(el){el.setAttribute('x',p.ox+p.sx);el.setAttribute('y',p.oy+p.sy);el.setAttribute('opacity','0');}});
   ['j1','j2','j3','j4','complete-mark'].forEach(id=>{const el=document.getElementById(id);if(el)el.setAttribute('opacity','0');});
-
-  const L = LANG_UI[currentLang.code] || LANG_UI.en;
-  let msgI = 0;
-  document.getElementById('load-msg').textContent = L.loadMsgs[0];
-  const msgTimer = setInterval(()=>{ if(!animRunning){clearInterval(msgTimer);return;} msgI=Math.min(msgI+1,L.loadMsgs.length-1); document.getElementById('load-msg').textContent=L.loadMsgs[msgI]; }, 1300);
-
-  function tick() {
-    if (!animRunning) return;
-    frame++;
-    const progress = Math.min(frame / 180, 1);
-    document.getElementById('load-prog').style.width = (progress*100)+'%';
-    PIECES.forEach((piece,i) => {
-      const startP = i / (PIECES.length * 1.5);
-      const localP = Math.max(0, Math.min(1, (progress-startP)/0.28));
-      const e = localP<0.5 ? 2*localP*localP : -1+(4-2*localP)*localP;
-      const el = document.getElementById(piece.id);
-      if (!el) return;
-      el.setAttribute('x', piece.ox + piece.sx*(1-e));
-      el.setAttribute('y', piece.oy + piece.sy*(1-e));
-      el.setAttribute('opacity', e*(piece.id==='p-glow'?0.6:1));
+  const L=LANG_UI[currentLang.code]||LANG_UI.en;
+  let msgI=0; document.getElementById('load-msg').textContent=L.loadMsgs[0];
+  const mt=setInterval(()=>{if(!animRunning){clearInterval(mt);return;}msgI=Math.min(msgI+1,L.loadMsgs.length-1);document.getElementById('load-msg').textContent=L.loadMsgs[msgI];},1300);
+  function tick(){
+    if(!animRunning)return; frame++;
+    const progress=Math.min(frame/180,1);
+    document.getElementById('load-prog').style.width=(progress*100)+'%';
+    PIECES.forEach((piece,i)=>{
+      const sp=i/(PIECES.length*1.5),lp=Math.max(0,Math.min(1,(progress-sp)/0.28));
+      const e=lp<0.5?2*lp*lp:-1+(4-2*lp)*lp;
+      const el=document.getElementById(piece.id); if(!el)return;
+      el.setAttribute('x',piece.ox+piece.sx*(1-e));
+      el.setAttribute('y',piece.oy+piece.sy*(1-e));
+      el.setAttribute('opacity',e*(piece.id==='p-glow'?0.6:1));
     });
-    if (progress > 0.62) {
-      const jp = Math.min(1,(progress-0.62)/0.18);
-      ['j1','j2','j3','j4'].forEach(id=>{const el=document.getElementById(id);if(el)el.setAttribute('opacity',jp);});
-    }
-    if (progress > 0.9) {
-      const el = document.getElementById('complete-mark');
-      if (el) el.setAttribute('opacity', Math.min(1,(progress-0.9)/0.1));
-    }
-    if (frame < 600) requestAnimationFrame(tick);
+    if(progress>0.62){const jp=Math.min(1,(progress-0.62)/0.18);['j1','j2','j3','j4'].forEach(id=>{const el=document.getElementById(id);if(el)el.setAttribute('opacity',jp);});}
+    if(progress>0.9){const el=document.getElementById('complete-mark');if(el)el.setAttribute('opacity',Math.min(1,(progress-0.9)/0.1));}
+    if(frame<600)requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 }
-function stopLoading() { animRunning = false; }
+function stopLoading(){animRunning=false;}
 
-// ── SVG GRAPHICS ───────────────────────────────────────────────
-const GFX = [
-  `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="10" y="30" width="120" height="16" rx="2" fill="#ff6b2b22" stroke="#ff6b2b" stroke-width="1.2"/>${[0,20,40,60,80,100,120].map((x,i)=>`<line x1="${10+x}" y1="30" x2="${10+x}" y2="${i%2===0?22:26}" stroke="#ff6b2b" stroke-width="0.8"/>`).join('')}<line x1="50" y1="15" x2="50" y2="46" stroke="#3d9eff" stroke-width="1.5" stroke-dasharray="3,2"/><text x="54" y="20" fill="#3d9eff" font-size="8" font-family="monospace" font-weight="bold">450mm ±2mm</text><circle cx="50" cy="46" r="3" fill="#3d9eff"/></svg>`,
-  `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="15" y="20" width="110" height="36" rx="3" fill="#3d9eff22" stroke="#3d9eff" stroke-width="1.2"/><line x1="70" y1="14" x2="70" y2="60" stroke="#ff6b2b" stroke-width="2" stroke-dasharray="4,3"/><polygon points="65,9 75,9 70,17" fill="#ff6b2b"/><polygon points="65,65 75,65 70,57" fill="#ff6b2b"/><text x="74" y="40" fill="#ff6b2b" font-size="8" font-family="monospace" font-weight="bold">CUT</text><text x="72" y="50" fill="#ff6b2b" font-size="7" font-family="monospace">pipe cutter</text></svg>`,
-  `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="10" y="28" width="120" height="22" rx="3" fill="#a855f722" stroke="#a855f7" stroke-width="1.2"/>${[30,70,110].map(x=>`<circle cx="${x}" cy="39" r="6" fill="none" stroke="#ff6b2b" stroke-width="1.2"/><line x1="${x}" y1="28" x2="${x}" y2="16" stroke="#ff6b2b" stroke-width="1.2" stroke-dasharray="2,2"/><polygon points="${x-3},16 ${x+3},16 ${x},10" fill="#ff6b2b"/>`).join('')}<text x="55" y="64" fill="#a855f7" font-size="7" font-family="monospace">deburr after drilling</text></svg>`,
+// ── CALL AI ───────────────────────────────────────────────────
+async function callWorker(system, messages) {
+  const res = await fetch(WORKER_URL, {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ system, messages })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(JSON.stringify(data.error));
+  return data.text || '';
+}
+
+// ── BUILD GENERATION ──────────────────────────────────────────
+const DIFF_COLORS={Easy:'#22c55e',Medium:'#f59e0b',Hard:'#ff6b2b',Expert:'#ef4444'};
+const GFX=[
+  `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="10" y="30" width="120" height="16" rx="2" fill="#ff6b2b22" stroke="#ff6b2b" stroke-width="1.2"/>${[0,20,40,60,80,100,120].map((x,i)=>`<line x1="${10+x}" y1="30" x2="${10+x}" y2="${i%2===0?22:26}" stroke="#ff6b2b" stroke-width="0.8"/>`).join('')}<line x1="50" y1="15" x2="50" y2="46" stroke="#3d9eff" stroke-width="1.5" stroke-dasharray="3,2"/><text x="54" y="20" fill="#3d9eff" font-size="8" font-family="monospace" font-weight="bold">450mm ±2mm</text></svg>`,
+  `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="15" y="20" width="110" height="36" rx="3" fill="#3d9eff22" stroke="#3d9eff" stroke-width="1.2"/><line x1="70" y1="14" x2="70" y2="60" stroke="#ff6b2b" stroke-width="2" stroke-dasharray="4,3"/><polygon points="65,9 75,9 70,17" fill="#ff6b2b"/><polygon points="65,65 75,65 70,57" fill="#ff6b2b"/><text x="74" y="42" fill="#ff6b2b" font-size="8" font-family="monospace">CUT</text></svg>`,
+  `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="10" y="28" width="120" height="22" rx="3" fill="#a855f722" stroke="#a855f7" stroke-width="1.2"/>${[30,70,110].map(x=>`<circle cx="${x}" cy="39" r="6" fill="none" stroke="#ff6b2b" stroke-width="1.2"/><line x1="${x}" y1="28" x2="${x}" y2="16" stroke="#ff6b2b" stroke-width="1.2" stroke-dasharray="2,2"/><polygon points="${x-3},16 ${x+3},16 ${x},10" fill="#ff6b2b"/>`).join('')}<text x="40" y="64" fill="#a855f7" font-size="7" font-family="monospace">deburr after drilling</text></svg>`,
   `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="5" y="25" width="54" height="26" rx="3" fill="#22c55e22" stroke="#22c55e" stroke-width="1.2"/><rect x="81" y="25" width="54" height="26" rx="3" fill="#22c55e22" stroke="#22c55e" stroke-width="1.2"/><line x1="59" y1="38" x2="81" y2="38" stroke="#ff6b2b" stroke-width="2" stroke-dasharray="4,3"/><circle cx="70" cy="38" r="8" fill="#ff6b2b"/><text x="66" y="42" fill="#fff" font-size="11" font-weight="bold">+</text><text x="42" y="64" fill="#22c55e" font-size="7" font-family="monospace">torque: 25Nm</text></svg>`,
-  `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="15" y="14" width="110" height="50" rx="6" fill="#22c55e22" stroke="#22c55e" stroke-width="1.2"/><polyline points="28,42 50,56 108,26" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="38" r="18" fill="none" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/><text x="45" y="72" fill="#22c55e" font-size="7" font-family="monospace">check before next step</text></svg>`,
+  `<svg viewBox="0 0 140 80" width="140" height="80"><rect x="15" y="14" width="110" height="50" rx="6" fill="#22c55e22" stroke="#22c55e" stroke-width="1.2"/><polyline points="28,42 50,56 108,26" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="40" y="72" fill="#22c55e" font-size="7" font-family="monospace">verify before next step</text></svg>`,
 ];
 
-const DIFF_COLORS = {Easy:'#22c55e',Medium:'#f59e0b',Hard:'#ff6b2b',Expert:'#ef4444',
-  Fácil:'#22c55e',Medio:'#f59e0b',Difícil:'#ff6b2b',Experto:'#ef4444',
-  Facile:'#22c55e',Moyen:'#f59e0b',Difficile:'#ff6b2b',
-  Einfach:'#22c55e',Mittel:'#f59e0b',Schwer:'#ff6b2b'};
-
-// ── BUILD GENERATION ───────────────────────────────────────────
 async function startBuild() {
   if (!currentLevel) return;
   showScreen('loading');
   startAssembly(currentPrompt);
-
   const langName = currentLang.name;
-  const langCode = currentLang.code;
 
-  const sys = `You are iGuide AI — precision maker guide. Respond ONLY with valid JSON, no markdown fences, no extra text.
+  const sys = `You are iGuide AI — precision maker guide. Respond ONLY with valid JSON, no markdown.
+ALL text fields must be in ${langName}. Keep part names bilingual: ${langName} (English). Measurements always metric.
 
-CRITICAL LANGUAGE RULE: Generate ALL text fields in ${langName}. Keep part names and measurements bilingual where helpful: native language (English). Keep all numeric measurements in metric (mm, cm, kg, Nm).
+Return exactly:
+{"title":"...","tagline":"...","estimatedTime":"...","estimatedCost":"...","overview":"...","safety":[{"icon":"emoji","rule":"..."}],"materials":[{"name":"...","qty":"...","approxCost":"$X","tip":"...","isRare":true/false,"canPrint3D":true/false,"source":"McMaster-Carr/AliExpress/etc"}],"tools":[{"name":"...","required":true,"alternative":"...or null"}],"steps":[{"title":"...","duration":"X min","difficulty":"Easy|Medium|Hard|Expert","what":"...","how":"...","measurements":{"dimension":"Xmm","tolerance":"±Xmm","quantity":"N pcs"},"toolForStep":"...","checkBefore":"...or null","checkAfter":"...or null","safetyNote":"...or null","rareParts":[{"name":"...","where":"...","canPrint3D":true}]}],"rareSummary":[{"name":"...","where":"...","leadTime":"X days","canPrint3D":true,"tip":"..."}],"proTips":["..."],"finalNote":"..."}
 
-Return exactly this JSON structure:
-{
-  "title": "project title in ${langName}",
-  "tagline": "one line description in ${langName}",
-  "estimatedTime": "e.g. 6-8 hours",
-  "estimatedCost": "e.g. $80–$150",
-  "overview": "2-3 sentence overview in ${langName}",
-  "safety": [{"icon":"emoji","rule":"safety rule in ${langName}"}],
-  "materials": [
-    {
-      "name": "part name in ${langName} (English)",
-      "qty": "exact quantity with unit",
-      "approxCost": "$X",
-      "tip": "sourcing tip in ${langName}",
-      "isRare": true or false,
-      "canPrint3D": true or false,
-      "source": "best place to buy e.g. McMaster-Carr, AliExpress, Local hardware"
-    }
-  ],
-  "tools": [{"name":"tool in ${langName} (English)","required":true,"alternative":"alt or null"}],
-  "steps": [
-    {
-      "title": "step title in ${langName}",
-      "duration": "X min",
-      "difficulty": "Easy|Medium|Hard|Expert",
-      "what": "clear instruction in ${langName}",
-      "how": "specific technique in ${langName}",
-      "measurements": {"dimension":"value mm","tolerance":"±Xmm","quantity":"N pieces"},
-      "toolForStep": "exact tool to use",
-      "checkBefore": "what to verify before starting this step in ${langName}",
-      "checkAfter": "what to verify after completing in ${langName}",
-      "safetyNote": "warning in ${langName} or null",
-      "rareParts": [{"name":"part name","where":"exact source","canPrint3D":true}]
-    }
-  ],
-  "rareSummary": [{"name":"part","where":"McMaster-Carr / AliExpress / etc","leadTime":"X days","canPrint3D":true,"tip":"tip in ${langName}"}],
-  "proTips": ["tip in ${langName}"],
-  "finalNote": "encouraging note in ${langName}"
-}
-
-Level: ${currentLevel}. beginner=6-8 steps, intermediate=8-12, advanced=10-15.
-PRECISION IS CRITICAL: Every step must have real measurements, tolerances, and tool specs. No vague instructions.
-RARE PARTS: Identify parts that are hard to find locally and give exact sources.`;
+Level: ${currentLevel}. beginner=6-8 steps, intermediate=8-12, advanced=10-15. Every step needs real measurements and tool specs.${uploadedImageB64 ? ' Analyze the uploaded image carefully and base the build plan on what you see.' : ''}`;
 
   try {
-    const res = await fetch(WORKER_URL, {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ system:sys, messages:[{role:'user',content:`Build: ${currentPrompt}\nLevel: ${currentLevel}\nLanguage: ${langName}`}] })
-    });
-    const data = await res.json();
-    const clean = (data.text||'').replace(/```json|```/g,'').trim();
+    // Build user message — include image if uploaded
+    let userContent;
+    if (uploadedImageB64) {
+      userContent = [
+        { type:'image', source:{ type:'base64', media_type: uploadedImageType, data: uploadedImageB64 } },
+        { type:'text', text:`Build based on this image: ${currentPrompt}\nLevel: ${currentLevel}\nLanguage: ${langName}` }
+      ];
+    } else {
+      userContent = `Build: ${currentPrompt}\nLevel: ${currentLevel}\nLanguage: ${langName}`;
+    }
+
+    const raw = await callWorker(sys, [{ role:'user', content: userContent }]);
+    const clean = raw.replace(/```json|```/g,'').trim();
     currentPlan = JSON.parse(clean);
     doneSteps = new Set();
     animRunning = false;
@@ -634,27 +692,26 @@ RARE PARTS: Identify parts that are hard to find locally and give exact sources.
     showScreen('build');
   } catch(e) {
     animRunning = false;
-    alert('Could not generate plan. Check Worker URL and API key.');
+    alert('Could not generate plan. Error: ' + e.message);
     showScreen('home');
   }
 }
 
-// ── RENDER ────────────────────────────────────────────────────
+// ── RENDER BUILD ──────────────────────────────────────────────
 function renderBuild() {
   const p = currentPlan;
   document.getElementById('b-title').textContent = p.title;
-  document.getElementById('b-time').textContent = '⏱ ' + p.estimatedTime;
-  document.getElementById('b-cost').textContent = '💰 ' + p.estimatedCost;
-  document.getElementById('b-lang-badge').textContent = currentLang.flag + ' ' + currentLang.label;
-  const ci = document.getElementById('chat-input');
-  if (ci) ci.placeholder = (LANG_UI[currentLang.code]||LANG_UI.en).chatPlaceholder;
+  document.getElementById('b-time').textContent = '⏱ '+p.estimatedTime;
+  document.getElementById('b-cost').textContent = '💰 '+p.estimatedCost;
+  document.getElementById('b-lang-badge').textContent = currentLang.flag+' '+currentLang.label;
+  const ci=document.getElementById('chat-input'); if(ci) ci.placeholder=(LANG_UI[currentLang.code]||LANG_UI.en).chatPH;
   updateProgress();
 
   // STEPS
-  document.getElementById('steps-tab').innerHTML = p.steps.map((s,i) => {
-    const col = DIFF_COLORS[s.difficulty] || '#3d9eff';
-    const hasRare = s.rareParts?.length > 0;
-    const hasMeas = s.measurements && Object.keys(s.measurements).length > 0;
+  document.getElementById('steps-tab').innerHTML = p.steps.map((s,i)=>{
+    const col=DIFF_COLORS[s.difficulty]||'#3d9eff';
+    const hasMeas=s.measurements&&Object.keys(s.measurements).filter(k=>s.measurements[k]).length>0;
+    const hasRare=s.rareParts?.length>0;
     return `<div class="step-card" id="sc-${i}">
       <div class="step-hdr" style="background:${col}11;border-bottom-color:${col}33">
         <div class="step-num" id="sn-${i}" style="color:${col};border-color:${col};background:${col}22">${i+1}</div>
@@ -662,150 +719,127 @@ function renderBuild() {
         <span class="diff-badge" style="color:${col};background:${col}22">${s.difficulty}</span>
         <span class="step-dur">${s.duration}</span>
       </div>
-      <div class="gfx-box">${GFX[i % GFX.length]}</div>
+      <div class="gfx-box">${GFX[i%GFX.length]}</div>
       <div class="step-body">
-        ${s.checkBefore ? `<div class="check-fail">✅ Before: ${s.checkBefore}</div>` : ''}
+        ${s.checkBefore?`<div class="check-before">✅ Before: ${s.checkBefore}</div>`:''}
         <div class="step-what">${s.what}</div>
         <div class="step-how">${s.how}</div>
-        ${hasMeas ? `<div class="precision-box">
-          <div class="precision-title">📐 PRECISION</div>
-          ${Object.entries(s.measurements).map(([k,v])=>`<div class="precision-row"><span class="precision-label">${k}</span><span class="precision-val">${v}</span></div>`).join('')}
-          ${s.toolForStep ? `<div class="precision-row"><span class="precision-label">Tool</span><span class="precision-val">${s.toolForStep}</span></div>` : ''}
-        </div>` : ''}
-        ${hasRare ? `<div class="rare-box">
-          <div class="rare-title">🔮 RARE PARTS THIS STEP</div>
-          ${s.rareParts.map(rp=>`<div class="rare-part">
-            <span class="rare-name">${rp.name}</span>
-            <span class="rare-where">📍 ${rp.where}</span>
-            ${rp.canPrint3D ? '<span class="rare-print">🖨️ Can 3D print</span>' : ''}
-          </div>`).join('')}
-        </div>` : ''}
-        ${s.safetyNote ? `<div class="warn-box">⚠️ ${s.safetyNote}</div>` : ''}
-        ${s.checkAfter ? `<div class="check-fail" style="border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.06);color:var(--green)">✓ After: ${s.checkAfter}</div>` : ''}
+        ${hasMeas?`<div class="precision-box"><div class="precision-title">📐 PRECISION</div>${Object.entries(s.measurements).filter(([k,v])=>v).map(([k,v])=>`<div class="precision-row"><span class="precision-label">${k}</span><span class="precision-val">${v}</span></div>`).join('')}${s.toolForStep?`<div class="precision-row"><span class="precision-label">Tool</span><span class="precision-val">${s.toolForStep}</span></div>`:''}</div>`:''}
+        ${hasRare?`<div class="rare-box"><div class="rare-title">🔮 RARE PARTS</div>${s.rareParts.map(r=>`<div class="rare-part"><span class="rare-name">${r.name}</span><span class="rare-where">📍 ${r.where}</span>${r.canPrint3D?'<span class="rare-print">🖨️ Can 3D print</span>':''}</div>`).join('')}</div>`:''}
+        ${s.safetyNote?`<div class="warn-box">⚠️ ${s.safetyNote}</div>`:''}
+        ${s.checkAfter?`<div class="check-after">✓ After: ${s.checkAfter}</div>`:''}
         <button class="check-btn" id="cb-${i}" onclick="toggleStep(${i})">Mark Complete</button>
       </div>
     </div>`;
-  }).join('') + `<div id="complete-banner" style="display:none" class="complete-card">
-    <div style="font-size:32px;margin-bottom:8px">🎉</div>
-    <div style="font-size:17px;font-weight:800;color:var(--green);margin-bottom:6px">Build Complete!</div>
-    <div style="font-size:13px;color:var(--muted)">${p.finalNote}</div>
-  </div>`;
+  }).join('')+`<div id="complete-banner" style="display:none" class="complete-card"><div style="font-size:32px;margin-bottom:8px">🎉</div><div style="font-size:17px;font-weight:800;color:var(--green);margin-bottom:6px">Build Complete!</div><div style="font-size:13px;color:var(--muted)">${p.finalNote}</div></div>`;
 
   // PARTS
-  const rareMats = p.materials?.filter(m=>m.isRare)||[];
-  document.getElementById('parts-tab').innerHTML =
-    (rareMats.length ? `<div class="sec-lbl" style="color:var(--purple)">🔮 RARE / SPECIALTY PARTS</div>` +
-    rareMats.map(m=>`<div class="list-card" style="border-color:rgba(168,85,247,0.3)">
-      <div class="list-row"><span class="list-name">${m.name}</span><span class="rare-flag">RARE</span></div>
-      <div class="list-cost">${m.approxCost} · ${m.qty}</div>
-      <div class="list-source">📍 ${m.source}</div>
-      ${m.canPrint3D?'<div class="list-tip" style="color:var(--green)">🖨️ Can 3D print this part</div>':''}
-      ${m.tip?`<div class="list-tip">💡 ${m.tip}</div>`:''}
-    </div>`).join('') : '') +
-    `<div class="sec-lbl" style="margin-top:${rareMats.length?'16px':'0'}">MATERIALS</div>` +
-    (p.materials||[]).filter(m=>!m.isRare).map(m=>`<div class="list-card">
-      <div class="list-row"><span class="list-name">${m.name}</span><span class="list-qty">${m.qty}</span></div>
-      <div class="list-cost">${m.approxCost}</div>
-      ${m.source?`<div class="list-source">📍 ${m.source}</div>`:''}
-      ${m.canPrint3D?'<span class="print-flag">🖨️ PRINTABLE</span>':''}
-      ${m.tip?`<div class="list-tip">💡 ${m.tip}</div>`:''}
-    </div>`).join('') +
-    `<div class="sec-lbl" style="margin-top:16px">TOOLS</div>` +
-    (p.tools||[]).map(t=>`<div class="list-card">
-      <div class="list-row"><span class="list-name">${t.name}</span><span class="req-badge">${t.required?'REQUIRED':'OPTIONAL'}</span></div>
-      ${t.alternative?`<div class="list-tip">🔄 ${t.alternative}</div>`:''}
-    </div>`).join('');
+  const rare=(p.materials||[]).filter(m=>m.isRare);
+  const common=(p.materials||[]).filter(m=>!m.isRare);
+  document.getElementById('parts-tab').innerHTML=
+    (rare.length?`<div class="sec-lbl" style="color:var(--purple)">🔮 RARE / SPECIALTY PARTS</div>`+rare.map(m=>`<div class="list-card" style="border-color:rgba(168,85,247,0.3)"><div class="list-row"><span class="list-name">${m.name}</span><span class="rare-flag">RARE</span></div><div class="list-cost">${m.approxCost} · ${m.qty}</div><div class="list-source">📍 ${m.source}</div>${m.canPrint3D?'<div class="list-tip" style="color:var(--green)">🖨️ Can 3D print</div>':''}${m.tip?`<div class="list-tip">💡 ${m.tip}</div>`:''}</div>`).join(''):'')+
+    `<div class="sec-lbl" style="margin-top:${rare.length?'16px':'0'}">MATERIALS</div>`+
+    common.map(m=>`<div class="list-card"><div class="list-row"><span class="list-name">${m.name}</span><span class="list-qty">${m.qty}</span></div><div class="list-cost">${m.approxCost}</div>${m.source?`<div class="list-source">📍 ${m.source}</div>`:''} ${m.canPrint3D?'<span class="print-flag">🖨️ PRINTABLE</span>':''}${m.tip?`<div class="list-tip">💡 ${m.tip}</div>`:''}</div>`).join('')+
+    `<div class="sec-lbl" style="margin-top:16px">TOOLS</div>`+
+    (p.tools||[]).map(t=>`<div class="list-card"><div class="list-row"><span class="list-name">${t.name}</span><span class="req-badge">${t.required?'REQUIRED':'OPTIONAL'}</span></div>${t.alternative?`<div class="list-tip">🔄 ${t.alternative}</div>`:''}</div>`).join('');
 
   // SAFETY
-  document.getElementById('safety-tab').innerHTML =
-    `<div class="ov-card"><div class="sec-lbl" style="margin-bottom:8px">OVERVIEW</div><div class="ov-text">${p.overview}</div></div>` +
-    `<div class="sec-lbl" style="color:var(--yellow)">⚠️ SAFETY</div>` +
-    (p.safety||[]).map(s=>`<div class="sf-card"><div class="sf-icon">${s.icon}</div><div class="sf-text">${s.rule}</div></div>`).join('') +
-    (p.rareSummary?.length ? `<div class="sec-lbl" style="color:var(--purple);margin-top:12px">🔮 RARE PARTS GUIDE</div>` +
-    p.rareSummary.map(r=>`<div class="list-card" style="border-color:rgba(168,85,247,0.25)">
-      <div class="list-row"><span class="list-name">${r.name}</span><span style="font-size:11px;color:var(--muted)">~${r.leadTime}</span></div>
-      <div class="list-source">📍 ${r.where}</div>
-      ${r.canPrint3D?'<div style="font-size:12px;color:var(--green);font-weight:600;margin-top:2px">🖨️ 3D printable</div>':''}
-      ${r.tip?`<div class="list-tip">💡 ${r.tip}</div>`:''}
-    </div>`).join('') : '') +
-    (p.proTips?.length ? `<div class="sec-lbl" style="color:var(--orange);margin-top:12px">🔥 PRO TIPS</div>` +
-    p.proTips.map(t=>`<div class="pt-card">→ ${t}</div>`).join('') : '');
+  document.getElementById('safety-tab').innerHTML=
+    `<div class="ov-card"><div class="sec-lbl" style="margin-bottom:8px">OVERVIEW</div><div class="ov-text">${p.overview}</div></div>`+
+    `<div class="sec-lbl" style="color:var(--yellow)">⚠️ SAFETY</div>`+
+    (p.safety||[]).map(s=>`<div class="sf-card"><div class="sf-icon">${s.icon}</div><div class="ov-text">${s.rule}</div></div>`).join('')+
+    (p.rareSummary?.length?`<div class="sec-lbl" style="color:var(--purple);margin-top:12px">🔮 RARE PARTS GUIDE</div>`+p.rareSummary.map(r=>`<div class="list-card" style="border-color:rgba(168,85,247,0.25)"><div class="list-row"><span class="list-name">${r.name}</span><span style="font-size:11px;color:var(--muted)">~${r.leadTime}</span></div><div class="list-source">📍 ${r.where}</div>${r.canPrint3D?'<div style="font-size:12px;color:var(--green);font-weight:600;margin-top:2px">🖨️ 3D printable</div>':''}${r.tip?`<div class="list-tip">💡 ${r.tip}</div>`:''}</div>`).join(''):'')+
+    (p.proTips?.length?`<div class="sec-lbl" style="color:var(--orange);margin-top:12px">🔥 PRO TIPS</div>`+p.proTips.map(t=>`<div class="pt-card">→ ${t}</div>`).join('') :'');
 
-  // CHAT
-  document.getElementById('chat-messages').innerHTML =
-    `<div class="bubble ai">Your <strong>${p.title}</strong> plan is ready! Ask me anything — rare parts, measurements, 3D printing, substitutions. 💪</div>`;
+  // CHAT seed
+  document.getElementById('chat-messages').innerHTML=
+    `<div class="bubble ai">Your <strong>${p.title}</strong> plan is ready! Ask me anything — snap a photo of your parts, measurements, or progress and I'll help. 📸💪</div>`;
 
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>{ if(i===0)b.classList.add('active'); else b.classList.remove('active'); });
-  document.querySelectorAll('.tab-content').forEach((t,i)=>{ if(i===0)t.classList.add('active'); else t.classList.remove('active'); });
-  document.getElementById('prog-bar-wrap').style.display = 'block';
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{i===0?b.classList.add('active'):b.classList.remove('active');});
+  document.querySelectorAll('.tab-content').forEach((t,i)=>{i===0?t.classList.add('active'):t.classList.remove('active');});
+  document.getElementById('prog-bar-wrap').style.display='block';
 }
 
 function toggleStep(i) {
-  doneSteps.has(i) ? doneSteps.delete(i) : doneSteps.add(i);
-  const card=document.getElementById('sc-'+i), btn=document.getElementById('cb-'+i), num=document.getElementById('sn-'+i);
-  if (doneSteps.has(i)) {
-    card.classList.add('done'); btn.classList.add('done'); btn.textContent='✅ Done — tap to undo';
-    num.textContent='✓'; num.style.color='var(--green)'; num.style.borderColor='var(--green)'; num.style.background='rgba(34,197,94,0.13)';
-  } else {
-    card.classList.remove('done'); btn.classList.remove('done'); btn.textContent='Mark Complete';
-    const col=DIFF_COLORS[currentPlan.steps[i].difficulty]||'#3d9eff';
-    num.textContent=i+1; num.style.color=col; num.style.borderColor=col; num.style.background=col+'22';
-  }
+  doneSteps.has(i)?doneSteps.delete(i):doneSteps.add(i);
+  const card=document.getElementById('sc-'+i),btn=document.getElementById('cb-'+i),num=document.getElementById('sn-'+i);
+  if(doneSteps.has(i)){card.classList.add('done');btn.classList.add('done');btn.textContent='✅ Done — tap to undo';num.textContent='✓';num.style.color='var(--green)';num.style.borderColor='var(--green)';num.style.background='rgba(34,197,94,0.13)';}
+  else{card.classList.remove('done');btn.classList.remove('done');btn.textContent='Mark Complete';const col=DIFF_COLORS[currentPlan.steps[i].difficulty]||'#3d9eff';num.textContent=i+1;num.style.color=col;num.style.borderColor=col;num.style.background=col+'22';}
   updateProgress();
 }
-
 function updateProgress() {
-  if (!currentPlan) return;
-  const total=currentPlan.steps.length, done=doneSteps.size, pct=Math.round((done/total)*100);
+  if(!currentPlan)return;
+  const total=currentPlan.steps.length,done=doneSteps.size,pct=Math.round((done/total)*100);
   document.getElementById('prog-bar').style.width=pct+'%';
   document.getElementById('prog-text').textContent=`${done} of ${total} steps done`;
-  const pe=document.getElementById('prog-pct'); pe.textContent=pct+'%'; pe.style.color=pct===100?'var(--green)':'var(--orange)';
+  const pe=document.getElementById('prog-pct');pe.textContent=pct+'%';pe.style.color=pct===100?'var(--green)':'var(--orange)';
   document.getElementById('complete-banner').style.display=pct===100?'block':'none';
 }
-
-function switchTab(id, btn) {
+function switchTab(id,btn) {
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(id+'-tab').classList.add('active');
-  if (btn) btn.classList.add('active');
+  if(btn)btn.classList.add('active');
   document.getElementById('prog-bar-wrap').style.display=id==='steps'?'block':'none';
 }
 
-// ── CHAT ───────────────────────────────────────────────────────
+// ── CHAT ──────────────────────────────────────────────────────
 async function sendChat() {
-  if (aiLoading) return;
-  const inp=document.getElementById('chat-input'), q=inp.value.trim();
-  if (!q) return;
+  if(aiLoading)return;
+  const inp=document.getElementById('chat-input'),q=inp.value.trim();
+  if(!q&&!chatImageB64)return;
   inp.value='';
   const msgs=document.getElementById('chat-messages');
-  msgs.innerHTML+=`<div class="bubble user">${q}</div>`;
+
+  // Show user bubble with image if any
+  let userBubble=`<div class="bubble user">`;
+  if(chatImageB64) userBubble+=`<img src="data:${chatImageType};base64,${chatImageB64}" style="max-width:100%;border-radius:8px;margin-bottom:4px;display:block"/>`;
+  if(q) userBubble+=q;
+  userBubble+=`</div>`;
+  msgs.innerHTML+=userBubble;
   msgs.innerHTML+=`<div class="bubble ai" id="typing"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>`;
-  msgs.scrollTop=msgs.scrollHeight; aiLoading=true;
+  msgs.scrollTop=msgs.scrollHeight;
+  aiLoading=true;
+
   const ctx=currentPlan?`Building: ${currentPlan.title}. Steps: ${currentPlan.steps.map((s,i)=>`${i+1}.${s.title}`).join(',')}`:'';
-  const sys=`You are iGuide AI — precision maker guide. ${ctx} Answer in ${currentLang.name}. Be specific, practical, 3-5 sentences. Include measurements when relevant.`;
+  const sys=`You are iGuide AI — precision maker guide. ${ctx} Answer in ${currentLang.name}. Be specific and practical. If an image is provided, analyze it and give relevant build advice. 3-5 sentences unless a list is needed.`;
+
   try {
-    const res=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({system:sys,messages:[{role:'user',content:q}]})});
-    const data=await res.json();
-    document.getElementById('typing').remove();
-    msgs.innerHTML+=`<div class="bubble ai">${data.text||'Try again.'}</div>`;
-  } catch { document.getElementById('typing')?.remove(); msgs.innerHTML+=`<div class="bubble ai">Connection error.</div>`; }
-  aiLoading=false; msgs.scrollTop=msgs.scrollHeight;
+    let userContent;
+    if(chatImageB64){
+      userContent=[
+        {type:'image',source:{type:'base64',media_type:chatImageType,data:chatImageB64}},
+        {type:'text',text:q||'What do you see? How does this relate to my build?'}
+      ];
+    } else {
+      userContent=q;
+    }
+    const reply=await callWorker(sys,[{role:'user',content:userContent}]);
+    document.getElementById('typing')?.remove();
+    msgs.innerHTML+=`<div class="bubble ai">${reply}</div>`;
+    clearChatImage();
+  } catch(e) {
+    document.getElementById('typing')?.remove();
+    msgs.innerHTML+=`<div class="bubble ai">Connection error. Try again.</div>`;
+  }
+  aiLoading=false;
+  msgs.scrollTop=msgs.scrollHeight;
 }
 
-// ── SAVE / LOAD ────────────────────────────────────────────────
+// ── SAVE / LOAD ───────────────────────────────────────────────
 async function saveBuild() {
-  if (!currentUser){showScreen('auth');return;}
-  const btn=document.getElementById('save-build-btn'); btn.textContent='💾 Saving...';
-  try {
-    const {error}=await sb.from('builds').insert({user_id:currentUser.id,title:currentPlan.title,tagline:currentPlan.tagline,level:currentLevel,prompt:currentPrompt,plan:currentPlan,estimated_time:currentPlan.estimatedTime,estimated_cost:currentPlan.estimatedCost,completed_steps:Array.from(doneSteps)});
-    if(error) throw error;
-    btn.textContent='✅ Saved'; btn.classList.add('saved'); await loadSavedBuilds();
-  } catch(e){btn.textContent='💾 Save';alert('Save failed: '+e.message);}
+  if(!currentUser){showScreen('auth');return;}
+  const btn=document.getElementById('save-build-btn');btn.textContent='💾 Saving...';
+  try{
+    const{error}=await sb.from('builds').insert({user_id:currentUser.id,title:currentPlan.title,tagline:currentPlan.tagline,level:currentLevel,prompt:currentPrompt,plan:currentPlan,estimated_time:currentPlan.estimatedTime,estimated_cost:currentPlan.estimatedCost,completed_steps:Array.from(doneSteps)});
+    if(error)throw error;
+    btn.textContent='✅ Saved';btn.classList.add('saved');await loadSavedBuilds();
+  }catch(e){btn.textContent='💾 Save';alert('Save failed: '+e.message);}
 }
 async function loadSavedBuilds() {
-  if (!currentUser||!sb) return;
-  const {data}=await sb.from('builds').select('*').eq('user_id',currentUser.id).order('created_at',{ascending:false}).limit(5);
-  if (!data?.length) return;
+  if(!currentUser||!sb)return;
+  const{data}=await sb.from('builds').select('*').eq('user_id',currentUser.id).order('created_at',{ascending:false}).limit(5);
+  if(!data?.length)return;
   document.getElementById('saved-section').style.display='block';
   document.getElementById('saved-list').innerHTML=data.map(b=>{
     const pct=b.completed_steps?.length&&b.plan?.steps?.length?Math.round((b.completed_steps.length/b.plan.steps.length)*100):0;
@@ -813,13 +847,13 @@ async function loadSavedBuilds() {
   }).join('');
 }
 async function loadBuild(id) {
-  const {data}=await sb.from('builds').select('*').eq('id',id).single();
-  if(!data) return;
-  currentPlan=data.plan; currentLevel=data.level; currentPrompt=data.prompt; doneSteps=new Set(data.completed_steps||[]);
-  renderBuild(); showScreen('build');
+  const{data}=await sb.from('builds').select('*').eq('id',id).single();
+  if(!data)return;
+  currentPlan=data.plan;currentLevel=data.level;currentPrompt=data.prompt;doneSteps=new Set(data.completed_steps||[]);
+  renderBuild();showScreen('build');
   doneSteps.forEach(i=>{
     const c=document.getElementById('sc-'+i),b=document.getElementById('cb-'+i),n=document.getElementById('sn-'+i);
-    if(c)c.classList.add('done'); if(b){b.classList.add('done');b.textContent='✅ Done — tap to undo';}
+    if(c)c.classList.add('done');if(b){b.classList.add('done');b.textContent='✅ Done — tap to undo';}
     if(n){n.textContent='✓';n.style.color='var(--green)';n.style.borderColor='var(--green)';n.style.background='rgba(34,197,94,0.13)';}
   });
   updateProgress();
