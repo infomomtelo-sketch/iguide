@@ -686,8 +686,13 @@ async function startBuild() {
   showScreen('loading');
   startAssembly(currentPrompt);
   const langName = currentLang.name;
+  const sys = `You are iGuide AI. Respond ONLY with valid JSON, no markdown, no trailing commas.
+ALL text in ${langName}. Measurements metric. Be concise in all text fields (1-2 sentences max per field).
 
-  const sys = `You are iGuide AI — precision maker guide. Respond ONLY with valid JSON, no markdown.
+Return this exact structure:
+{"title":"...","tagline":"...","estimatedTime":"...","estimatedCost":"...","overview":"2 sentences","safety":[{"icon":"emoji","rule":"1 sentence"}],"materials":[{"name":"...","qty":"...","approxCost":"$X","tip":"1 sentence or null","isRare":false,"canPrint3D":false,"source":"store name"}],"tools":[{"name":"...","required":true,"alternative":null}],"steps":[{"title":"...","duration":"X min","difficulty":"Easy|Medium|Hard|Expert","what":"1 sentence","how":"2-3 sentences","measurements":{"dimension":"Xmm","tolerance":"±Xmm","quantity":"N pcs"},"toolForStep":"...","checkBefore":null,"checkAfter":"1 sentence","safetyNote":null,"rareParts":[]}],"rareSummary":[],"proTips":["1 sentence"],"finalNote":"1 sentence"}
+
+Level: ${currentLevel}. Steps: beginner=5, intermediate=7, advanced=10. Max 10 materials, 6 tools.${uploadedImageB64 ? ' Analyze uploaded image for the build.' : ''}`;
 ALL text fields must be in ${langName}. Keep part names bilingual: ${langName} (English). Measurements always metric.
 
 Return exactly:
