@@ -662,15 +662,25 @@ function stopLoading(){animRunning=false;}
 
 // ── CALL AI ───────────────────────────────────────────────────
 async function callWorker(system, messages) {
-  const res = await fetch(WORKER_URL, {
-    method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({ system, messages })
-  });
-  const data = await res.json();
-  if (data.error) throw new Error(JSON.stringify(data.error));
-  return data.text || '';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+  try {
+    const res = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ system, messages }),
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
+    const data = await res.json();
+    if (data.error) throw new Error(JSON.stringify(data.error));
+    return data.text || '';
+  } catch(e) {
+    clearTimeout(timeout);
+    if (e.name === 'AbortError') throw new Error('Request timed out. Try again.');
+    throw e;
+  }
 }
-
 // ── BUILD GENERATION ──────────────────────────────────────────
 const DIFF_COLORS={Easy:'#22c55e',Medium:'#f59e0b',Hard:'#ff6b2b',Expert:'#ef4444'};
 const GFX=[
